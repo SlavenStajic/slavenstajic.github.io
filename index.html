@@ -2,65 +2,975 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coming Soon</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Portfolio — The Book</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #faf8f4;
+  --parchment: #f2ede3;
+  --cover: #c8bfb0;
+  --cover-dark: #a89e8e;
+  --cover-edge: #9e9080;
+  --spine-col: #b5a898;
+  --page: #fdfaf5;
+  --page-alt: #f7f3ec;
+  --text: #3a322a;
+  --text-light: #8a7e70;
+  --text-lighter: #b8aa98;
+  --rule: rgba(100,80,60,0.15);
+  --accent: #c9a227;
 }
 
+html, body { width:100%; height:100%; overflow:hidden; }
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f7f7f7;
-    color: #222;
+  background: var(--cream);
+  font-family: 'Cormorant Garamond', serif;
+  position: relative;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.container {
-    text-align: center;
+/* ── CANVAS ── */
+#leaves-canvas {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 0;
+  transition: opacity 0.8s ease;
+}
+#leaves-canvas.dim { opacity: 0.25; }
+
+/* ════════════════════════════════════
+   LANDING
+════════════════════════════════════ */
+#landing {
+  position: fixed; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  z-index: 10;
+  transition: opacity 0.6s ease, transform 0.9s cubic-bezier(0.7,0,0.2,1);
+}
+#landing.zoom-out {
+  opacity: 0; transform: scale(3.5);
+  pointer-events: none;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+.book-wrapper {
+  transition: transform 0.85s cubic-bezier(0.6,0,0.2,1);
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.book-scene { perspective: 1400px; perspective-origin: 50% 48%; }
+
+.book {
+  position: relative; width: 220px; height: 300px;
+  transform-style: preserve-3d;
+}
+.book-spine {
+  position:absolute; left:0; top:6px;
+  width:26px; height:calc(100% - 12px);
+  background: linear-gradient(to right, var(--cover-edge), var(--spine-col));
+  transform: rotateY(-90deg) translateZ(0px) translateX(-13px);
+  transform-origin: left center;
+  border-radius: 3px 0 0 3px;
+  box-shadow: inset -4px 0 8px rgba(0,0,0,0.15);
+}
+.book-back {
+  position:absolute; inset:0;
+  background: linear-gradient(160deg, var(--cover) 0%, var(--cover-dark) 100%);
+  border-radius: 3px 6px 6px 3px;
+  box-shadow: 6px 6px 24px rgba(100,80,60,0.22), 2px 2px 8px rgba(100,80,60,0.12);
+  transform: translateZ(-2px);
+}
+.book-pages-edge {
+  position:absolute; top:5px; right:-1px;
+  width:12px; height:calc(100% - 10px);
+  background: repeating-linear-gradient(to bottom,#f5f0e8 0,#f5f0e8 2px,#e8e2d4 2px,#e8e2d4 3px);
+  transform: rotateY(90deg) translateZ(209px);
+  transform-origin: left center;
+  border-radius: 0 2px 2px 0;
+}
+.book-front {
+  position:absolute; inset:0;
+  transform-style: preserve-3d;
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: transform 0.85s cubic-bezier(0.6,0,0.2,1);
+}
+.book-front-face {
+  position:absolute; inset:0;
+  background: linear-gradient(160deg, var(--cover) 0%, var(--cover-dark) 100%);
+  border-radius: 3px 6px 6px 3px;
+  backface-visibility: hidden;
+  box-shadow: 4px 0 18px rgba(100,80,60,0.18);
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:10px;
+}
+.cover-rule { width:120px; height:1px; background:rgba(255,255,255,0.35); }
+.cover-title { font-family:'Cormorant Garamond',serif; font-weight:300; font-size:15px; letter-spacing:4px; text-transform:uppercase; color:rgba(255,255,255,0.72); }
+.cover-ornament { font-size:26px; opacity:0.45; color:#fff; line-height:1; }
+.book-front-inner {
+  position:absolute; inset:0;
+  background: linear-gradient(170deg,#f0ebe0,#e8e0ce);
+  border-radius:3px 6px 6px 3px;
+  backface-visibility:hidden; transform:rotateY(180deg);
+  display:flex; align-items:center; justify-content:center;
+}
+.inner-dec { width:80%; height:80%; border:1px solid rgba(160,140,110,0.3); border-radius:2px; display:flex; align-items:center; justify-content:center; }
+.inner-dec span { font-size:40px; opacity:0.18; }
+
+.book-first-page {
+  position:absolute; top:5px; bottom:5px; left:10px; right:8px;
+  background:var(--page); border-radius:1px 4px 4px 1px;
+  transform:translateZ(-1px); opacity:0;
+  transition:opacity 0.3s ease 0.5s;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:22px 18px; text-align:center;
+}
+.book.is-open .book-first-page { opacity:1; }
+.book.is-open .book-front { transform:rotateY(-172deg); }
+
+.fp-rule { width:50px; height:1px; background:var(--rule); margin:8px auto; }
+.fp-label { font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--text-lighter); font-family:'Jost',sans-serif; font-weight:300; margin-bottom:10px; }
+.fp-poem { font-size:12px; line-height:2; color:var(--text); font-style:italic; font-weight:300; }
+.fp-enter { margin-top:14px; font-size:8px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-family:'Jost',sans-serif; font-weight:300; animation: pulse-enter 2s ease-in-out infinite; }
+@keyframes pulse-enter { 0%,100%{opacity:0.5} 50%{opacity:1} }
+
+.hint {
+  position:fixed; bottom:34px; left:50%; transform:translateX(-50%);
+  font-family:'Jost',sans-serif; font-weight:200; font-size:10px;
+  letter-spacing:3px; text-transform:uppercase; color:#b8aa98;
+  transition:opacity 0.6s; pointer-events:none; z-index:20; white-space:nowrap;
+}
+.hint.hidden { opacity:0; }
+
+/* mobile: scale down book slightly */
+@media (max-width: 480px) {
+  .book { width:180px; height:248px; }
+  .book-pages-edge { transform: rotateY(90deg) translateZ(171px) !important; }
 }
 
-p {
-    font-size: 1.1rem;
-    color: #666;
+/* ════════════════════════════════════
+   INTERIOR
+════════════════════════════════════ */
+#interior {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 5;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.7s ease 0.3s;
+  overflow: hidden;
+}
+#interior.visible { opacity:1; pointer-events:all; }
+
+/* ── DESKTOP: two-page spread ── */
+.open-book {
+  position: relative;
+  width: min(900px, 96vw);
+  height: min(580px, 88vh);
+  display: flex;
+  filter: drop-shadow(0 30px 60px rgba(100,80,60,0.22));
+}
+.page-left {
+  position:relative; width:50%; height:100%;
+  background: var(--page-alt);
+  border-radius: 6px 0 0 6px; overflow:hidden;
+  border-right: 1px solid var(--rule);
+  box-shadow: inset -8px 0 18px rgba(100,80,60,0.08);
+}
+.page-right-stack {
+  position:relative; width:50%; height:100%;
+  transform-style: preserve-3d; perspective: 2000px;
+}
+.r-page {
+  position:absolute; inset:0;
+  background:var(--page); border-radius:0 6px 6px 0; overflow:hidden;
+  backface-visibility:hidden; transform-origin: left center;
+}
+.r-page.curl-out { animation: curlOut 0.75s cubic-bezier(0.7,0,0.3,1) forwards; }
+.r-page.curl-in  { animation: curlIn  0.75s cubic-bezier(0.7,0,0.3,1) forwards; }
+@keyframes curlOut {
+  0%   { transform:rotateY(0deg);    box-shadow:none; }
+  40%  { transform:rotateY(-60deg);  box-shadow:-8px 0 30px rgba(100,80,60,0.18); }
+  100% { transform:rotateY(-175deg); box-shadow:none; }
+}
+@keyframes curlIn {
+  0%   { transform:rotateY(-175deg); }
+  60%  { transform:rotateY(-60deg);  box-shadow:-8px 0 30px rgba(100,80,60,0.18); }
+  100% { transform:rotateY(0deg);    box-shadow:none; }
+}
+.r-page.curl-out::after, .r-page.curl-in::after {
+  content:''; position:absolute; inset:0;
+  background: linear-gradient(to left, rgba(160,140,110,0.18) 0%, transparent 40%);
+  pointer-events:none;
+}
+.spine-shadow {
+  position:absolute; top:0; left:50%; width:18px; height:100%;
+  transform:translateX(-50%);
+  background: linear-gradient(to right, rgba(100,80,60,0.10) 0%, rgba(100,80,60,0.04) 40%, rgba(100,80,60,0.04) 60%, rgba(100,80,60,0.10) 100%);
+  pointer-events:none; z-index:100;
 }
 
-.line {
-    width: 60px;
-    height: 3px;
-    background: #222;
-    margin: 20px auto;
-    border-radius: 2px;
+/* ── MOBILE: single scrollable page ── */
+@media (max-width: 700px) {
+  #interior { align-items: flex-start; }
+
+  .open-book {
+    width: 100vw;
+    height: calc(100vh - 56px);
+    filter: none;
+    flex-direction: column;
+  }
+  .page-left {
+    width: 100%; height: 100%;
+    border-radius: 0; border-right: none;
+    box-shadow: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .page-right-stack, .spine-shadow { display: none; }
+  .page-inner {
+    position: relative !important;
+    min-height: 100%;
+    overflow: visible;
+    padding: 28px 22px 80px !important;
+  }
+  .pg-num { position:relative !important; bottom:auto !important; left:auto !important; right:auto !important; margin-top:28px; align-self:center; }
 }
 
-.gif {
-    margin-top: 25px;
+/* ── PAGE CONTENT ── */
+.page-inner {
+  position:absolute; inset:0;
+  padding: clamp(20px,3.5%,44px);
+  display:flex; flex-direction:column;
 }
+.ch-label { font-family:'Jost',sans-serif; font-weight:200; font-size:9px; letter-spacing:4px; text-transform:uppercase; color:var(--text-lighter); margin-bottom:6px; }
+.ch-rule { width:40px; height:1px; background:var(--accent); margin-bottom:18px; }
+.pg-num { position:absolute; bottom:16px; font-family:'Jost',sans-serif; font-weight:200; font-size:9px; letter-spacing:3px; color:var(--text-lighter); }
+.pg-num.left  { left:clamp(20px,3.5%,44px); }
+.pg-num.right { right:clamp(20px,3.5%,44px); }
+
+/* About */
+.about-name { font-size:clamp(28px,4.5vw,52px); font-weight:300; line-height:1.05; color:var(--text); margin-bottom:6px; }
+.about-role { font-family:'Jost',sans-serif; font-weight:200; font-size:11px; letter-spacing:5px; text-transform:uppercase; color:var(--accent); margin-bottom:20px; }
+.about-bio { font-size:14px; line-height:1.95; color:var(--text-light); font-weight:300; }
+.about-detail-list { margin-top:auto; }
+.about-detail-list li { list-style:none; display:flex; gap:10px; align-items:baseline; font-family:'Jost',sans-serif; font-size:10px; letter-spacing:1px; color:var(--text-lighter); padding:6px 0; border-bottom:1px solid var(--rule); }
+.about-detail-list li span:first-child { color:var(--text-light); font-weight:300; min-width:64px; }
+
+/* Skills */
+.skills-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+.skill-name { font-family:'Jost',sans-serif; font-weight:300; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--text-light); margin-bottom:6px; }
+.skill-bar { height:1px; background:var(--rule); position:relative; overflow:visible; }
+.skill-bar-fill { position:absolute; top:-1px; left:0; height:3px; background: linear-gradient(to right, var(--accent), #d4b84a); border-radius:2px; animation: growBar 1.2s cubic-bezier(0.4,0,0.2,1) forwards; animation-play-state: paused; }
+.skill-bar-fill.animate { animation-play-state: running; }
+@keyframes growBar { from{width:0} }
+.skill-pct { font-family:'Jost',sans-serif; font-weight:200; font-size:9px; color:var(--text-lighter); margin-top:4px; letter-spacing:1px; }
+
+/* Projects */
+.proj-img-wrap { width:100%; flex:1; background:var(--parchment); border-radius:2px; overflow:hidden; position:relative; display:flex; align-items:center; justify-content:center; }
+.proj-img-placeholder { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:var(--text-lighter); }
+.proj-icon { font-size:32px; opacity:0.3; }
+.proj-hint { font-family:'Jost',sans-serif; font-size:9px; letter-spacing:2px; text-transform:uppercase; opacity:0.5; }
+.proj-swatch-1 { background:linear-gradient(135deg,#e8ddd0,#d4c8b8); }
+.proj-swatch-2 { background:linear-gradient(135deg,#d8e0d8,#c4cfc4); }
+.proj-swatch-3 { background:linear-gradient(135deg,#ddd8e8,#c8c0d4); }
+.proj-swatch-4 { background:linear-gradient(135deg,#e8e0d0,#d4cab8); }
+.proj-swatch-5 { background:linear-gradient(135deg,#e0d8d8,#cfc4c4); }
+.proj-swatch-6 { background:linear-gradient(135deg,#d8dce0,#c4c8ce); }
+.proj-meta { padding-top:14px; }
+.proj-index { font-family:'Jost',sans-serif; font-weight:200; font-size:9px; letter-spacing:4px; color:var(--text-lighter); margin-bottom:4px; }
+.proj-title { font-size:clamp(16px,2.2vw,26px); font-weight:300; color:var(--text); line-height:1.1; margin-bottom:10px; }
+.proj-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:10px; }
+.proj-tag { font-family:'Jost',sans-serif; font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--text-lighter); border:1px solid var(--rule); padding:3px 8px; border-radius:1px; }
+.proj-desc { font-size:13px; line-height:1.8; color:var(--text-light); font-weight:300; }
+
+/* CV */
+.cv-timeline { margin-top:4px; display:flex; flex-direction:column; }
+.cv-entry { display:grid; grid-template-columns:64px 1fr; gap:0 12px; padding:10px 0; border-bottom:1px solid var(--rule); }
+.cv-year { font-family:'Jost',sans-serif; font-weight:200; font-size:9px; letter-spacing:2px; color:var(--text-lighter); padding-top:3px; }
+.cv-role { font-size:13px; font-weight:400; color:var(--text); margin-bottom:2px; }
+.cv-place { font-family:'Jost',sans-serif; font-weight:200; font-size:10px; letter-spacing:1px; color:var(--text-lighter); margin-bottom:3px; }
+.cv-desc { font-size:11.5px; line-height:1.7; color:var(--text-light); font-weight:300; }
+.edu-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:8px; }
+.edu-deg { font-size:13px; font-weight:400; color:var(--text); margin-bottom:2px; }
+.edu-school { font-family:'Jost',sans-serif; font-weight:200; font-size:10px; letter-spacing:1px; color:var(--text-lighter); }
+.edu-year { font-family:'Jost',sans-serif; font-weight:200; font-size:9px; color:var(--accent); margin-top:2px; }
+
+/* Contact */
+.contact-big { font-size:clamp(20px,3vw,34px); font-weight:300; color:var(--text); line-height:1.4; margin-bottom:24px; }
+.contact-list { list-style:none; display:flex; flex-direction:column; gap:12px; }
+.contact-list li { display:flex; align-items:center; gap:14px; font-family:'Jost',sans-serif; font-weight:200; font-size:11px; letter-spacing:2px; color:var(--text-light); border-bottom:1px solid var(--rule); padding-bottom:12px; }
+.contact-icon { font-size:14px; opacity:0.5; width:20px; text-align:center; }
+.contact-list a { color:inherit; text-decoration:none; transition:color 0.2s; }
+.contact-list a:active, .contact-list a:hover { color:var(--accent); }
+.cv-download { margin-top:24px; display:inline-flex; align-items:center; gap:10px; font-family:'Jost',sans-serif; font-weight:300; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--text); text-decoration:none; border:1px solid rgba(100,80,60,0.25); padding:12px 24px; border-radius:1px; transition:all 0.3s; align-self:flex-start; }
+.cv-download:active, .cv-download:hover { background:var(--text); color:var(--cream); border-color:var(--text); }
+.closing-ornament { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; text-align:center; }
+.closing-ornament .big-orn { font-size:48px; opacity:0.12; }
+.closing-ornament p { font-size:13px; font-style:italic; color:var(--text-lighter); font-weight:300; line-height:1.9; }
+
+/* ════════════════════════════════════
+   NAV BAR
+════════════════════════════════════ */
+#nav-bar {
+  position:fixed; bottom:0; left:0; right:0; height:52px;
+  display:flex; align-items:center; justify-content:center; gap:28px;
+  z-index:200; opacity:0; pointer-events:none;
+  transition:opacity 0.5s ease 0.8s;
+  background: linear-gradient(to top, rgba(250,248,244,0.97), transparent);
+}
+#nav-bar.visible { opacity:1; pointer-events:all; }
+.nav-btn { background:none; border:none; cursor:pointer; font-family:'Jost',sans-serif; font-weight:200; font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--text-lighter); padding:10px 14px; transition:color 0.2s; touch-action:manipulation; }
+.nav-btn:hover, .nav-btn:active { color:var(--text); }
+.nav-btn:disabled { opacity:0.22; cursor:default; }
+.nav-chapters { display:flex; align-items:center; gap:6px; }
+.ch-dot { width:6px; height:6px; border-radius:50%; background:var(--rule); border:1px solid rgba(100,80,60,0.2); cursor:pointer; transition:all 0.2s; touch-action:manipulation; }
+.ch-dot.active { background:var(--accent); border-color:var(--accent); transform:scale(1.3); }
+
+/* mobile nav adjustments */
+@media (max-width:700px) {
+  #nav-bar { height:56px; gap:12px; }
+  .nav-btn { font-size:10px; padding:12px 16px; letter-spacing:2px; }
+  .ch-dot { width:7px; height:7px; }
+  .nav-chapters { gap:7px; }
+}
+
+/* chapter label - mobile top bar */
+#chapter-label {
+  display:none;
+  position:fixed; top:0; left:0; right:0; height:44px;
+  align-items:center; justify-content:center;
+  font-family:'Jost',sans-serif; font-weight:200; font-size:9px;
+  letter-spacing:4px; text-transform:uppercase; color:var(--text-lighter);
+  background: linear-gradient(to bottom, rgba(250,248,244,0.97), transparent);
+  z-index:200; pointer-events:none;
+  opacity:0; transition:opacity 0.4s;
+}
+#chapter-label.visible { opacity:1; }
+@media (max-width:700px) { #chapter-label { display:flex; } }
+
+/* page counter mobile */
+#mobile-pg {
+  display:none;
+  position:fixed; bottom:62px; right:16px;
+  font-family:'Jost',sans-serif; font-weight:200; font-size:9px;
+  letter-spacing:2px; color:var(--text-lighter); z-index:200; pointer-events:none;
+  opacity:0; transition:opacity 0.5s ease 0.8s;
+}
+#mobile-pg.visible { opacity:1; }
+@media (max-width:700px) { #mobile-pg { display:block; } }
+
+/* swipe hint */
+#swipe-hint {
+  display:none; position:fixed; bottom:66px; left:50%; transform:translateX(-50%);
+  font-family:'Jost',sans-serif; font-weight:200; font-size:9px;
+  letter-spacing:3px; text-transform:uppercase; color:var(--text-lighter);
+  pointer-events:none; z-index:201; white-space:nowrap;
+  opacity:0; transition:opacity 0.5s;
+}
+#swipe-hint.show { opacity:1; }
+@media (max-width:700px) { #swipe-hint { display:block; } }
+
+/* back button */
+#back-btn {
+  position:fixed; top:12px; left:16px;
+  font-family:'Jost',sans-serif; font-weight:200; font-size:9px; letter-spacing:3px; text-transform:uppercase;
+  color:var(--text-lighter); background:none; border:none; cursor:pointer;
+  opacity:0; pointer-events:none;
+  transition:opacity 0.4s ease 0.8s, color 0.2s;
+  z-index:300; padding:8px 4px; touch-action:manipulation;
+}
+#back-btn:hover, #back-btn:active { color:var(--text); }
+#back-btn.visible { opacity:1; pointer-events:all; }
+/* On mobile, back btn sits below the chapter label */
+@media (max-width:700px) { #back-btn { top:14px; } }
 </style>
-
 </head>
-
 <body>
 
-<div class="container">
-    <h1>Coming Soon</h1>
-    <div class="line"></div>
-    <p>My website is currently under construction.</p>
+<canvas id="leaves-canvas"></canvas>
 
-    <img class="gif" src="https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyMGVzMTIwaWU2a2RocnBkYXdheG9zZTJwY3hnOXZlaDNoaHM4ZDQ4MyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/JIX9t2j0ZTN9S/200w.gif" alt="loading gif">
+<!-- ══ LANDING ══ -->
+<div id="landing">
+  <p class="hint" id="hint">click to open</p>
+  <div class="book-wrapper" id="bookWrapper">
+    <div class="book-scene">
+      <div class="book" id="book">
+        <div class="book-spine"></div>
+        <div class="book-pages-edge"></div>
+        <div class="book-back"></div>
+        <div class="book-first-page">
+          <p class="fp-label">Portfolio</p>
+          <div class="fp-rule"></div>
+          <p class="fp-poem">Every page a window,<br>every line a door —<br><em>enter.</em></p>
+          <div class="fp-rule"></div>
+          <p class="fp-enter" id="enterPrompt">tap to enter</p>
+        </div>
+        <div class="book-front">
+          <div class="book-front-face">
+            <div class="cover-rule"></div>
+            <span class="cover-ornament">❧</span>
+            <span class="cover-title">Portfolio</span>
+            <div class="cover-rule"></div>
+          </div>
+          <div class="book-front-inner">
+            <div class="inner-dec"><span>🍂</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<!-- ══ INTERIOR ══ -->
+<div id="interior">
+  <div class="open-book">
+    <div class="page-left" id="pageLeft">
+      <div class="page-inner" id="leftContent"></div>
+    </div>
+    <div class="spine-shadow"></div>
+    <div class="page-right-stack">
+      <div class="r-page" id="pageRight">
+        <div class="page-inner" id="rightContent"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ UI CHROME ══ -->
+<div id="chapter-label"></div>
+<div id="mobile-pg"></div>
+<div id="swipe-hint">swipe to navigate</div>
+
+<nav id="nav-bar">
+  <button class="nav-btn" id="prevBtn">&#8592; prev</button>
+  <div class="nav-chapters" id="chapterDots"></div>
+  <button class="nav-btn" id="nextBtn">next &#8594;</button>
+</nav>
+
+<button id="back-btn" onclick="exitInterior()">&#8592; cover</button>
+
+<script>
+/* ══════════════════════
+   DEVICE DETECTION
+══════════════════════ */
+const isMobile = () => window.innerWidth <= 700;
+const isTouch  = () => 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+/* ══════════════════════
+   DATA
+══════════════════════ */
+const SPREADS = [
+  {
+    id:'about', label:'About',
+    left: () => `
+      <p class="ch-label">About me</p>
+      <h1 class="about-name">Your<br>Name</h1>
+      <p class="about-role">Graphic Designer</p>
+      <p class="about-bio" style="max-width:320px">
+        I craft visual identities, editorial layouts, and digital experiences
+        that balance precision with feeling. Based in your city, working globally.
+      </p>
+      <ul class="about-detail-list">
+        <li><span>Based in</span><span>Your City</span></li>
+        <li><span>Available</span><span>Freelance &amp; Full-time</span></li>
+        <li><span>Languages</span><span>EN, Your Language</span></li>
+        <li><span>Since</span><span>20XX</span></li>
+      </ul>`,
+    right: () => `
+      <p class="ch-label">Skills &amp; tools</p>
+      <div class="ch-rule"></div>
+      <div class="skills-grid">
+        ${skillsHTML()}
+      </div>`,
+    mobile: () => `
+      <p class="ch-label">About me</p>
+      <h1 class="about-name" style="font-size:34px;margin-bottom:4px">Your Name</h1>
+      <p class="about-role">Graphic Designer</p>
+      <p class="about-bio" style="margin-bottom:20px">
+        I craft visual identities, editorial layouts, and digital experiences
+        that balance precision with feeling. Based in your city, working globally.
+      </p>
+      <ul class="about-detail-list" style="margin-bottom:28px">
+        <li><span>Based in</span><span>Your City</span></li>
+        <li><span>Available</span><span>Freelance &amp; Full-time</span></li>
+        <li><span>Languages</span><span>EN, Your Language</span></li>
+        <li><span>Since</span><span>20XX</span></li>
+      </ul>
+      <p class="ch-label">Skills &amp; tools</p>
+      <div class="ch-rule"></div>
+      <div class="skills-grid">${skillsHTML()}</div>`
+  },
+
+  ...[
+    {n:1,title:'Brand Identity — Studio Fold',    tags:['Branding','Identity','Print'],   desc:'Complete visual identity for an architecture studio, from logo to print collateral and environmental graphics.',swatch:'proj-swatch-1',icon:'&#9672;'},
+    {n:2,title:'Editorial — Forma Magazine',       tags:['Editorial','Typography','Layout'],desc:'Art direction and layout design for a quarterly design publication, spanning 200 pages per issue.',swatch:'proj-swatch-2',icon:'&#9643;'},
+    {n:3,title:'Packaging — Seve Skincare',        tags:['Packaging','Branding','Retail'], desc:'Minimalist packaging system for a premium botanical skincare line, using uncoated stocks and blind embossing.',swatch:'proj-swatch-3',icon:'&#9673;'},
+    {n:4,title:'Wayfinding — Central Library',     tags:['Wayfinding','Signage','Identity'],desc:'Comprehensive signage and wayfinding system for a public library, balancing accessibility with elegant form.',swatch:'proj-swatch-4',icon:'&#9678;'},
+    {n:5,title:'Campaign — Solstice Festival',     tags:['Campaign','Motion','Print'],     desc:'Visual campaign for a summer arts festival — posters, digital assets, and motion graphics for social media.',swatch:'proj-swatch-5',icon:'&#9680;'},
+    {n:6,title:'Digital — Arche Studio Website',  tags:['Web Design','UI','Digital'],     desc:'Design direction and prototype for a creative studio portfolio website, focusing on editorial grid systems.',swatch:'proj-swatch-6',icon:'&#9681;'},
+  ].map(p => ({
+    id:`proj-${p.n}`, label:`Project ${p.n}`,
+    left: () => `
+      <div class="proj-img-wrap ${p.swatch}" style="flex:1;margin-bottom:14px">
+        <div class="proj-img-placeholder">
+          <span class="proj-icon">${p.icon}</span>
+          <span class="proj-hint">Place your image here</span>
+        </div>
+      </div>
+      <div class="proj-meta">
+        <p class="proj-index">0${p.n} / 06</p>
+        <h2 class="proj-title">${p.title}</h2>
+        <div class="proj-tags">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
+      </div>`,
+    right: () => `
+      <p class="ch-label">Project overview</p>
+      <div class="ch-rule"></div>
+      <p class="proj-desc" style="font-size:14px;line-height:2;margin-bottom:14px">${p.desc}</p>
+      <p class="proj-desc" style="font-size:12.5px;opacity:0.7;margin-bottom:auto">
+        Replace this with your actual project description — the brief, your approach, and the outcome.
+      </p>
+      <div style="padding-top:16px;border-top:1px solid var(--rule)">
+        <p class="ch-label" style="margin-bottom:4px">Year</p>
+        <p style="font-size:13px;color:var(--text-light);font-family:'Jost',sans-serif;font-weight:200;letter-spacing:1px">202X</p>
+      </div>`,
+    mobile: () => `
+      <div class="proj-img-wrap ${p.swatch}" style="height:190px;flex:none;border-radius:2px;margin-bottom:18px">
+        <div class="proj-img-placeholder">
+          <span class="proj-icon" style="font-size:28px">${p.icon}</span>
+          <span class="proj-hint">Place your image here</span>
+        </div>
+      </div>
+      <p class="proj-index">0${p.n} / 06</p>
+      <h2 class="proj-title" style="font-size:20px">${p.title}</h2>
+      <div class="proj-tags" style="margin-bottom:14px">${p.tags.map(t=>`<span class="proj-tag">${t}</span>`).join('')}</div>
+      <div class="ch-rule"></div>
+      <p class="proj-desc" style="font-size:14px;line-height:1.95;margin-bottom:12px">${p.desc}</p>
+      <p class="proj-desc" style="font-size:12px;opacity:0.65;margin-bottom:20px">
+        Replace this with your actual project description — the brief, your approach, and the outcome.
+      </p>
+      <div style="padding-top:14px;border-top:1px solid var(--rule)">
+        <p class="ch-label" style="margin-bottom:4px">Year</p>
+        <p style="font-size:12px;color:var(--text-light);font-family:'Jost',sans-serif;font-weight:200;letter-spacing:1px">202X</p>
+      </div>`
+  })),
+
+  {
+    id:'cv', label:'CV',
+    left: () => `
+      <p class="ch-label">Experience</p>
+      <div class="ch-rule"></div>
+      <div class="cv-timeline">
+        ${cvHTML()}
+      </div>`,
+    right: () => `
+      <p class="ch-label">Education</p>
+      <div class="ch-rule"></div>
+      <div class="edu-grid">${eduHTML()}</div>
+      <div style="margin-top:24px">
+        <p class="ch-label">Awards</p>
+        <div class="ch-rule"></div>
+        ${awardsHTML()}
+      </div>`,
+    mobile: () => `
+      <p class="ch-label">Experience</p>
+      <div class="ch-rule"></div>
+      <div class="cv-timeline" style="margin-bottom:28px">${cvHTML()}</div>
+      <p class="ch-label">Education</p>
+      <div class="ch-rule"></div>
+      <div class="edu-grid" style="margin-bottom:24px">${eduHTML()}</div>
+      <p class="ch-label">Awards</p>
+      <div class="ch-rule"></div>
+      ${awardsHTML()}`
+  },
+
+  {
+    id:'contact', label:'Contact',
+    left: () => `
+      <p class="ch-label">Get in touch</p>
+      <div class="ch-rule"></div>
+      <p class="contact-big">Let&#39;s make<br>something<br><em>worth keeping.</em></p>
+      <ul class="contact-list">
+        <li><span class="contact-icon">&#9993;</span><a href="mailto:hello@yourname.com">hello@yourname.com</a></li>
+        <li><span class="contact-icon">&#11041;</span><a href="#">instagram.com/yourhandle</a></li>
+        <li><span class="contact-icon">&#9672;</span><a href="#">behance.net/yourname</a></li>
+        <li><span class="contact-icon">&#11039;</span><a href="#">linkedin.com/in/yourname</a></li>
+      </ul>
+      <a class="cv-download" href="#">&#8595; &nbsp; Download CV</a>`,
+    right: () => `
+      <div class="closing-ornament">
+        <span class="big-orn">&#10087;</span>
+        <p>Thank you for<br>turning every page.</p>
+        <div style="width:30px;height:1px;background:var(--rule);margin:8px auto"></div>
+        <p style="font-size:11px;letter-spacing:2px;font-style:normal;font-family:'Jost',sans-serif;font-weight:200;color:var(--text-lighter)">YOUR NAME &#8212; 20XX</p>
+      </div>`,
+    mobile: () => `
+      <p class="ch-label">Get in touch</p>
+      <div class="ch-rule"></div>
+      <p class="contact-big" style="font-size:26px;margin-bottom:20px">Let&#39;s make<br>something<br><em>worth keeping.</em></p>
+      <ul class="contact-list" style="margin-bottom:24px">
+        <li><span class="contact-icon">&#9993;</span><a href="mailto:hello@yourname.com">hello@yourname.com</a></li>
+        <li><span class="contact-icon">&#11041;</span><a href="#">instagram.com/yourhandle</a></li>
+        <li><span class="contact-icon">&#9672;</span><a href="#">behance.net/yourname</a></li>
+        <li><span class="contact-icon">&#11039;</span><a href="#">linkedin.com/in/yourname</a></li>
+      </ul>
+      <a class="cv-download" href="#" style="margin-bottom:32px">&#8595; &nbsp; Download CV</a>
+      <div style="text-align:center;padding-top:24px;border-top:1px solid var(--rule)">
+        <span style="font-size:36px;opacity:0.1">&#10087;</span>
+        <p style="font-size:13px;font-style:italic;color:var(--text-lighter);margin-top:10px;line-height:1.8">Thank you for<br>turning every page.</p>
+        <p style="margin-top:8px;font-size:9px;letter-spacing:2px;font-family:'Jost',sans-serif;font-weight:200;color:var(--text-lighter)">YOUR NAME &#8212; 20XX</p>
+      </div>`
+  }
+];
+
+/* ── helper HTML builders ── */
+function skillsHTML() {
+  return [['Brand Identity','92'],['Editorial Design','88'],['Typography','95'],['UI / UX','80'],['Motion Graphics','72'],['Illustration','78'],['Figma','90'],['Adobe Suite','96']]
+    .map(([n,p])=>`<div><div class="skill-name">${n}</div><div class="skill-bar"><div class="skill-bar-fill" style="width:${p}%"></div></div><div class="skill-pct">${p}%</div></div>`).join('');
+}
+function cvHTML() {
+  return [['2022&#8211;Now','Senior Designer','Studio Name, City','Lead visual identity projects from concept to delivery.'],
+          ['2019&#8211;22','Graphic Designer','Agency Name, City','Editorial and branding work across print and digital.'],
+          ['2017&#8211;19','Junior Designer','Studio Name, City','Assisted on brand identity, packaging, and campaign design.']]
+    .map(([y,r,p,d])=>`<div class="cv-entry"><span class="cv-year">${y}</span><div><div class="cv-role">${r}</div><div class="cv-place">${p}</div><div class="cv-desc">${d}</div></div></div>`).join('');
+}
+function eduHTML() {
+  return [['BA Graphic Design','University Name','2014&#8211;2017'],['Exchange Semester','Foreign University','2016'],['Type Design Course','Type Foundry / Online','2020'],['Motion Graphics','Online / Course','2021']]
+    .map(([d,s,y])=>`<div><div class="edu-deg">${d}</div><div class="edu-school">${s}</div><div class="edu-year">${y}</div></div>`).join('');
+}
+function awardsHTML() {
+  return [['2023','D&amp;AD Pencil &#8212; Shortlist'],['2022','Young Guns Award'],['2021','TDC Certificate of Excellence']]
+    .map(([y,a])=>`<div class="cv-entry" style="padding:7px 0"><span class="cv-year">${y}</span><div class="cv-role" style="font-size:13px">${a}</div></div>`).join('');
+}
+
+/* ══════════════════════
+   STATE
+══════════════════════ */
+let bookOpen=false, inInterior=false, currentSpread=0, isAnimating=false, isHovered=false;
+
+/* ══════════════════════
+   LANDING
+══════════════════════ */
+const bookEl  = document.getElementById('book');
+const wrapper = document.getElementById('bookWrapper');
+const landing = document.getElementById('landing');
+const hintEl  = document.getElementById('hint');
+
+if (isTouch()) {
+  hintEl.textContent = 'tap to open';
+  document.getElementById('enterPrompt').textContent = 'tap again to enter';
+} else {
+  document.getElementById('enterPrompt').textContent = 'click to enter';
+}
+
+function applyWrapperTransform() {
+  const rot  = bookOpen ? -12 : 0;
+  const lift = isHovered ? -18 : 0;
+  wrapper.style.transform = `rotate(${rot}deg) translateY(${lift}px)`;
+}
+applyWrapperTransform();
+
+wrapper.addEventListener('mouseenter', () => { isHovered=true;  applyWrapperTransform(); });
+wrapper.addEventListener('mouseleave', () => { isHovered=false; applyWrapperTransform(); });
+
+wrapper.addEventListener('click', () => {
+  if (inInterior) return;
+  if (!bookOpen) {
+    bookOpen = true;
+    bookEl.classList.add('is-open');
+    applyWrapperTransform();
+    hintEl.textContent = isTouch() ? 'tap again to enter' : 'click again to enter';
+  } else {
+    enterInterior();
+  }
+});
+
+/* ══════════════════════
+   ENTER / EXIT
+══════════════════════ */
+const interior   = document.getElementById('interior');
+const navBar     = document.getElementById('nav-bar');
+const backBtn    = document.getElementById('back-btn');
+const leavesC    = document.getElementById('leaves-canvas');
+const chLabelEl  = document.getElementById('chapter-label');
+const mobilePg   = document.getElementById('mobile-pg');
+const swipeHint  = document.getElementById('swipe-hint');
+
+function enterInterior() {
+  inInterior = true;
+  landing.classList.add('zoom-out');
+  leavesC.classList.add('dim');
+  setTimeout(() => {
+    landing.style.display = 'none';
+    interior.classList.add('visible');
+    navBar.classList.add('visible');
+    backBtn.classList.add('visible');
+    mobilePg.classList.add('visible');
+    currentSpread = 0;
+    renderSpread(0, 'none');
+    buildDots();
+    animateSkillBars();
+    // Show swipe hint briefly on touch devices
+    if (isTouch()) {
+      swipeHint.classList.add('show');
+      setTimeout(() => swipeHint.classList.remove('show'), 2800);
+    }
+  }, 600);
+}
+
+function exitInterior() {
+  inInterior = false;
+  interior.classList.remove('visible');
+  navBar.classList.remove('visible');
+  backBtn.classList.remove('visible');
+  mobilePg.classList.remove('visible');
+  chLabelEl.classList.remove('visible');
+  leavesC.classList.remove('dim');
+  landing.style.display = 'flex';
+  requestAnimationFrame(() => requestAnimationFrame(() => landing.classList.remove('zoom-out')));
+}
+
+/* ══════════════════════
+   RENDER
+══════════════════════ */
+const leftContent  = document.getElementById('leftContent');
+const rightContent = document.getElementById('rightContent');
+const pageRight    = document.getElementById('pageRight');
+const pageLeft     = document.getElementById('pageLeft');
+
+function renderSpread(idx, direction) {
+  const s = SPREADS[idx];
+  const mobile = isMobile();
+
+  if (mobile) {
+    leftContent.innerHTML = s.mobile ? s.mobile() : s.left();
+    pageLeft.scrollTop = 0;
+  } else {
+    leftContent.innerHTML  = s.left();
+    rightContent.innerHTML = s.right();
+  }
+
+  if (direction !== 'none' && !mobile) {
+    const cls = direction === 'forward' ? 'curl-in' : 'curl-out';
+    pageRight.classList.remove('curl-out','curl-in');
+    void pageRight.offsetWidth;
+    pageRight.classList.add(cls);
+    pageRight.addEventListener('animationend', () => {
+      pageRight.classList.remove(cls);
+      isAnimating = false;
+    }, { once: true });
+  } else {
+    isAnimating = false;
+  }
+
+  updateNav();
+  updateChapterLabel();
+  if (idx === 0) animateSkillBars();
+}
+
+function goTo(idx, direction) {
+  if (isAnimating) return;
+  if (idx < 0 || idx >= SPREADS.length) return;
+  isAnimating = true;
+
+  if (!isMobile() && direction === 'forward') {
+    const next = SPREADS[idx];
+    const ghost = document.createElement('div');
+    ghost.className = 'r-page'; ghost.style.zIndex = '0';
+    ghost.innerHTML = `<div class="page-inner">${next.right()}</div>`;
+    pageRight.parentNode.insertBefore(ghost, pageRight);
+    pageRight.style.zIndex = '1';
+    pageRight.classList.remove('curl-out','curl-in');
+    void pageRight.offsetWidth;
+    pageRight.classList.add('curl-out');
+    leftContent.innerHTML = next.left();
+    pageRight.addEventListener('animationend', () => {
+      ghost.remove();
+      pageRight.classList.remove('curl-out');
+      pageRight.style.zIndex = '';
+      currentSpread = idx;
+      rightContent.innerHTML = next.right();
+      isAnimating = false;
+      updateNav(); updateChapterLabel();
+      if (idx === 0) animateSkillBars();
+    }, { once: true });
+
+  } else if (!isMobile() && direction === 'backward') {
+    const s = SPREADS[idx];
+    leftContent.innerHTML  = s.left();
+    rightContent.innerHTML = s.right();
+    pageRight.classList.remove('curl-out','curl-in');
+    void pageRight.offsetWidth;
+    pageRight.classList.add('curl-in');
+    pageRight.addEventListener('animationend', () => {
+      pageRight.classList.remove('curl-in');
+      currentSpread = idx;
+      isAnimating = false;
+      updateNav(); updateChapterLabel();
+      if (idx === 0) animateSkillBars();
+    }, { once: true });
+
+  } else {
+    // Mobile: quick fade swap
+    currentSpread = idx;
+    pageLeft.style.opacity = '0';
+    pageLeft.style.transition = 'opacity 0.18s ease';
+    setTimeout(() => {
+      renderSpread(idx, 'none');
+      pageLeft.style.opacity = '1';
+    }, 140);
+    setTimeout(() => { isAnimating = false; }, 320);
+  }
+}
+
+/* ══════════════════════
+   NAV
+══════════════════════ */
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const dotsEl  = document.getElementById('chapterDots');
+
+function buildDots() {
+  dotsEl.innerHTML = '';
+  SPREADS.forEach((s,i) => {
+    const d = document.createElement('div');
+    d.className = 'ch-dot' + (i===0?' active':'');
+    d.dataset.idx = i;
+    d.title = s.label;
+    d.addEventListener('click', () => {
+      const ti = parseInt(d.dataset.idx);
+      if (ti === currentSpread || isAnimating) return;
+      goTo(ti, ti > currentSpread ? 'forward' : 'backward');
+    });
+    dotsEl.appendChild(d);
+  });
+}
+
+function updateNav() {
+  prevBtn.disabled = currentSpread === 0;
+  nextBtn.disabled = currentSpread === SPREADS.length - 1;
+  document.querySelectorAll('.ch-dot').forEach(d => {
+    d.classList.toggle('active', parseInt(d.dataset.idx) === currentSpread);
+  });
+  mobilePg.textContent = `${currentSpread + 1} / ${SPREADS.length}`;
+}
+
+function updateChapterLabel() {
+  chLabelEl.textContent = SPREADS[currentSpread].label;
+  chLabelEl.classList.remove('visible');
+  void chLabelEl.offsetWidth;
+  chLabelEl.classList.add('visible');
+}
+
+prevBtn.addEventListener('click', () => { if (currentSpread > 0) goTo(currentSpread-1,'backward'); });
+nextBtn.addEventListener('click', () => { if (currentSpread < SPREADS.length-1) goTo(currentSpread+1,'forward'); });
+
+document.addEventListener('keydown', e => {
+  if (!inInterior) return;
+  if (e.key==='ArrowRight'||e.key==='ArrowDown') nextBtn.click();
+  if (e.key==='ArrowLeft' ||e.key==='ArrowUp')   prevBtn.click();
+  if (e.key==='Escape') exitInterior();
+});
+
+/* ══════════════════════
+   SWIPE GESTURES
+══════════════════════ */
+let txStart=0, tyStart=0;
+document.addEventListener('touchstart', e => {
+  txStart = e.touches[0].clientX;
+  tyStart = e.touches[0].clientY;
+}, { passive:true });
+
+document.addEventListener('touchend', e => {
+  if (!inInterior) return;
+  const dx = e.changedTouches[0].clientX - txStart;
+  const dy = e.changedTouches[0].clientY - tyStart;
+  if (Math.abs(dx) < 45 || Math.abs(dy) > Math.abs(dx) * 0.75) return;
+  if (dx < -45) nextBtn.click();
+  if (dx >  45) prevBtn.click();
+}, { passive:true });
+
+/* ══════════════════════
+   SKILL BARS
+══════════════════════ */
+function animateSkillBars() {
+  setTimeout(() => {
+    document.querySelectorAll('.skill-bar-fill').forEach(b => {
+      b.classList.remove('animate');
+      void b.offsetWidth;
+      b.classList.add('animate');
+    });
+  }, 200);
+}
+
+/* ══════════════════════
+   LEAVES
+══════════════════════ */
+const canvas = document.getElementById('leaves-canvas');
+const ctx    = canvas.getContext('2d');
+let W, H, leaves = [];
+const LEAF_COUNT = isTouch() ? 14 : 28;
+const PROXIMITY  = 200;
+let mouse = {x:-999,y:-999};
+
+function resize() { W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; }
+window.addEventListener('resize', () => { resize(); if(inInterior) buildDots(); });
+resize();
+
+document.addEventListener('mousemove', e => { mouse.x=e.clientX; mouse.y=e.clientY; });
+document.addEventListener('touchmove', e => { mouse.x=e.touches[0].clientX; mouse.y=e.touches[0].clientY; }, {passive:true});
+document.addEventListener('touchend', () => { setTimeout(()=>{ mouse.x=-999; mouse.y=-999; },700); }, {passive:true});
+
+const COLORS=['#e8874a','#d4522a','#c9a227','#b84c1e','#e0c060','#cc6633','#f0a040','#d96020'];
+
+function drawLeaf(c,size,color,alpha,rot) {
+  c.save(); c.rotate(rot); c.globalAlpha=alpha;
+  c.fillStyle=color; c.strokeStyle='rgba(0,0,0,0.05)'; c.lineWidth=0.5;
+  c.beginPath(); c.moveTo(0,-size);
+  c.bezierCurveTo(size*.7,-size*.6,size*.7,size*.6,0,size);
+  c.bezierCurveTo(-size*.7,size*.6,-size*.7,-size*.6,0,-size);
+  c.closePath(); c.fill(); c.stroke();
+  c.beginPath(); c.moveTo(0,-size); c.lineTo(0,size);
+  c.strokeStyle='rgba(0,0,0,0.07)'; c.lineWidth=0.4; c.stroke();
+  c.restore();
+}
+function makeLeaf() {
+  return {
+    x:Math.random()*W, y:-30-Math.random()*200,
+    size:7+Math.random()*11,
+    color:COLORS[Math.floor(Math.random()*COLORS.length)],
+    alpha:0.12+Math.random()*0.18,
+    rotation:Math.random()*Math.PI*2,
+    rotSpeed:(Math.random()-.5)*.025,
+    speedX:(Math.random()-.5)*.7,
+    speedY:0.4+Math.random()*.8,
+    sway:Math.random()*Math.PI*2,
+    swaySpeed:.008+Math.random()*.012,
+    swayAmp:.4+Math.random()*.9,
+    _a:undefined
+  };
+}
+for(let i=0;i<LEAF_COUNT;i++){const l=makeLeaf();l.y=Math.random()*H;leaves.push(l);}
+function dist(ax,ay,bx,by){const dx=ax-bx,dy=ay-by;return Math.sqrt(dx*dx+dy*dy);}
+
+(function animate(){
+  ctx.clearRect(0,0,W,H);
+  const dimmed=leavesC.classList.contains('dim');
+  for(const l of leaves){
+    l.sway+=l.swaySpeed; l.x+=l.speedX+Math.sin(l.sway)*l.swayAmp;
+    l.y+=l.speedY; l.rotation+=l.rotSpeed;
+    if(l.y>H+30) Object.assign(l,makeLeaf());
+    const near=!dimmed&&dist(l.x,l.y,mouse.x,mouse.y)<PROXIMITY;
+    const target=near?0.72:l.alpha;
+    l._a=l._a===undefined?l.alpha:l._a+(target-l._a)*.06;
+    ctx.save(); ctx.translate(l.x,l.y);
+    drawLeaf(ctx,l.size,l.color,l._a,l.rotation);
+    ctx.restore();
+  }
+  requestAnimationFrame(animate);
+})();
+</script>
 </body>
 </html>
