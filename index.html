@@ -433,12 +433,36 @@
   ::-webkit-scrollbar-track { background: var(--bg); }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
+  /* BACK BUTTON */
+  #back-btn {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px 6px 8px;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    white-space: nowrap;
+  }
+  #back-btn:hover { color: var(--text); border-color: var(--text); background: rgba(255,255,255,0.04); }
+  #back-btn.visible { display: flex; }
+
   /* ── MOBILE ─────────────────────────────────────────────── */
   @media (max-width: 600px) {
 
     /* Header: shrink title, keep timer readable */
     #header { height: 56px; padding: 0 14px; gap: 8px; }
     #header-title { font-size: 0.65rem; letter-spacing: 0.06em; }
+    #back-btn { font-size: 0.65rem; padding: 5px 9px 5px 7px; }
+    #back-btn span { display: none; } /* icon only on mobile */
     #timer { font-size: 1.1rem; min-width: 56px; }
     #timer-label { display: none; }
     #progress-bar-wrap { top: 56px; }
@@ -521,7 +545,15 @@
 <body>
 
 <div id="header">
-  <span id="header-title">☁ AWS Cloud Practitioner Quiz</span>
+  <div style="display:flex;align-items:center;gap:12px;min-width:0;">
+    <button id="back-btn" onclick="retryQuiz()" style="display:none;" title="Back to home">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>Home</span>
+    </button>
+    <span id="header-title">☁ AWS Cloud Practitioner Quiz</span>
+  </div>
   <div id="timer-wrap">
     <span id="timer-label">Time</span>
     <span id="timer">10:00</span>
@@ -639,6 +671,7 @@
     renderQuestions();
     startTimer();
     updateProgress();
+    document.getElementById('back-btn').classList.add('visible');
   }
 
   function renderQuestions() {
@@ -832,6 +865,7 @@
     el.classList.remove('warning');
     el.textContent = '10:00';
     document.getElementById('intro').style.display = 'block';
+    document.getElementById('back-btn').classList.remove('visible');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -848,3 +882,4 @@
 </script>
 </body>
 </html>
+
