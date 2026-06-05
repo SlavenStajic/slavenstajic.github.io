@@ -1,0 +1,2682 @@
+{
+  "questions": [
+    {
+      "question_number": 1,
+      "question_text": "Which AWS service can be used to run code without provisioning or managing servers, and automatically scales based on incoming requests?",
+      "possible_answers": [
+        "AWS Elastic Beanstalk",
+        "Amazon EC2",
+        "AWS Lambda",
+        "Amazon ECS"
+      ],
+      "correct_answers": [
+        "AWS Lambda"
+      ]
+    },
+    {
+      "question_number": 2,
+      "question_text": "A company wants to migrate its on-premises application to AWS. The application has unpredictable traffic patterns and the company wants to minimize costs. Which EC2 purchasing option is most suitable?",
+      "possible_answers": [
+        "Reserved Instances",
+        "Spot Instances",
+        "On-Demand Instances",
+        "Dedicated Hosts"
+      ],
+      "correct_answers": [
+        "On-Demand Instances"
+      ]
+    },
+    {
+      "question_number": 3,
+      "question_text": "Which AWS service provides a fully managed NoSQL database with single-digit millisecond latency at any scale?",
+      "possible_answers": [
+        "Amazon Redshift",
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon Aurora"
+      ],
+      "correct_answers": [
+        "Amazon DynamoDB"
+      ]
+    },
+    {
+      "question_number": 4,
+      "question_text": "Which of the following are benefits of using Amazon CloudFront? (Select TWO.)",
+      "possible_answers": [
+        "Reduces latency by caching content at edge locations",
+        "Provides DDoS protection through AWS Shield",
+        "Replicates data across multiple AWS Regions automatically",
+        "Encrypts data at rest using AWS KMS",
+        "Replaces the need for an origin server"
+      ],
+      "correct_answers": [
+        "Reduces latency by caching content at edge locations",
+        "Provides DDoS protection through AWS Shield"
+      ]
+    },
+    {
+      "question_number": 5,
+      "question_text": "Which AWS service allows you to track API calls made in your AWS account for auditing and security analysis?",
+      "possible_answers": [
+        "Amazon CloudWatch",
+        "AWS Config",
+        "AWS CloudTrail",
+        "AWS Trusted Advisor"
+      ],
+      "correct_answers": [
+        "AWS CloudTrail"
+      ]
+    },
+    {
+      "question_number": 6,
+      "question_text": "A company needs to ensure that its EC2 instances are protected from unauthorized access at the instance level. Which AWS feature should they configure?",
+      "possible_answers": [
+        "Network ACLs",
+        "Security Groups",
+        "Route Tables",
+        "Internet Gateway"
+      ],
+      "correct_answers": [
+        "Security Groups"
+      ]
+    },
+    {
+      "question_number": 7,
+      "question_text": "Which of the following are characteristics of the AWS Basic Support plan? (Select TWO.)",
+      "possible_answers": [
+        "24x7 access to customer service and documentation",
+        "Access to the AWS Support API",
+        "One-hour response time for production system down",
+        "Access to all AWS Trusted Advisor checks",
+        "Limited access to core Trusted Advisor checks"
+      ],
+      "correct_answers": [
+        "24x7 access to customer service and documentation",
+        "Limited access to core Trusted Advisor checks"
+      ]
+    },
+    {
+      "question_number": 8,
+      "question_text": "Which AWS service is used to decouple application components by providing a message queue that can store messages until they are processed?",
+      "possible_answers": [
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon EventBridge",
+        "Amazon Kinesis"
+      ],
+      "correct_answers": [
+        "Amazon SQS"
+      ]
+    },
+    {
+      "question_number": 9,
+      "question_text": "A company wants to automate the creation of its AWS infrastructure, including EC2 instances, VPCs, and RDS databases, using code. Which AWS service should it use?",
+      "possible_answers": [
+        "AWS CodeDeploy",
+        "AWS CloudFormation",
+        "AWS OpsWorks",
+        "AWS Elastic Beanstalk"
+      ],
+      "correct_answers": [
+        "AWS CloudFormation"
+      ]
+    },
+    {
+      "question_number": 10,
+      "question_text": "Which of the following factors should be considered when selecting an AWS Region for a new workload? (Select TWO.)",
+      "possible_answers": [
+        "Proximity to end users for low latency",
+        "The number of edge locations in the Region",
+        "Data sovereignty and compliance requirements",
+        "The size of the Region's local data center",
+        "Availability of free tier services"
+      ],
+      "correct_answers": [
+        "Proximity to end users for low latency",
+        "Data sovereignty and compliance requirements"
+      ]
+    },
+    {
+      "question_number": 11,
+      "question_text": "Which AWS service provides a scalable, durable, and low-cost object storage for backup and archival?",
+      "possible_answers": [
+        "Amazon EBS",
+        "Amazon EFS",
+        "Amazon S3",
+        "Amazon Storage Gateway"
+      ],
+      "correct_answers": [
+        "Amazon S3"
+      ]
+    },
+    {
+      "question_number": 12,
+      "question_text": "Under the AWS Shared Responsibility Model, which of the following is the customer's responsibility?",
+      "possible_answers": [
+        "Patching the hypervisor",
+        "Physical security of data centers",
+        "Securing the guest operating system on EC2",
+        "Disposal of storage devices"
+      ],
+      "correct_answers": [
+        "Securing the guest operating system on EC2"
+      ]
+    },
+    {
+      "question_number": 13,
+      "question_text": "Which AWS service can be used to analyze cost and usage data and forecast future AWS spending?",
+      "possible_answers": [
+        "AWS Budgets",
+        "AWS Cost Explorer",
+        "AWS Pricing Calculator",
+        "AWS Trusted Advisor"
+      ],
+      "correct_answers": [
+        "AWS Cost Explorer"
+      ]
+    },
+    {
+      "question_number": 14,
+      "question_text": "A company wants to run a batch processing job that can be interrupted and resumed. Which EC2 purchasing option offers the largest discount but may reclaim capacity with two-minute notice?",
+      "possible_answers": [
+        "On-Demand Instance",
+        "Reserved Instance",
+        "Spot Instance",
+        "Dedicated Instance"
+      ],
+      "correct_answers": [
+        "Spot Instance"
+      ]
+    },
+    {
+      "question_number": 15,
+      "question_text": "Which of the following are pillars of the AWS Well-Architected Framework? (Select TWO.)",
+      "possible_answers": [
+        "Security",
+        "Elasticity",
+        "Cost Optimization",
+        "Agility",
+        "Durability"
+      ],
+      "correct_answers": [
+        "Security",
+        "Cost Optimization"
+      ]
+    },
+    {
+      "question_number": 16,
+      "question_text": "Which AWS service allows you to create a virtual private network (VPN) connection to your on-premises data center?",
+      "possible_answers": [
+        "AWS Direct Connect",
+        "AWS Client VPN",
+        "AWS Site-to-Site VPN",
+        "AWS Transit Gateway"
+      ],
+      "correct_answers": [
+        "AWS Site-to-Site VPN"
+      ]
+    },
+    {
+      "question_number": 17,
+      "question_text": "A company needs to store customer data in a bucket with high durability and availability, and the data is accessed infrequently but must be available within milliseconds. Which S3 storage class is most cost-effective?",
+      "possible_answers": [
+        "S3 Standard",
+        "S3 Intelligent-Tiering",
+        "S3 Standard-Infrequent Access",
+        "S3 Glacier Deep Archive"
+      ],
+      "correct_answers": [
+        "S3 Standard-Infrequent Access"
+      ]
+    },
+    {
+      "question_number": 18,
+      "question_text": "Which of the following can be used to provide temporary, limited-privilege credentials to an AWS service or user?",
+      "possible_answers": [
+        "IAM User",
+        "IAM Group",
+        "IAM Role",
+        "IAM Policy"
+      ],
+      "correct_answers": [
+        "IAM Role"
+      ]
+    },
+    {
+      "question_number": 19,
+      "question_text": "Which AWS service is used to monitor the health and performance of your AWS resources and applications in real time?",
+      "possible_answers": [
+        "AWS CloudTrail",
+        "Amazon CloudWatch",
+        "AWS Config",
+        "AWS Health"
+      ],
+      "correct_answers": [
+        "Amazon CloudWatch"
+      ]
+    },
+    {
+      "question_number": 20,
+      "question_text": "A company wants to ensure that its EC2 instances are automatically added or removed based on demand. Which AWS service should it configure?",
+      "possible_answers": [
+        "Elastic Load Balancing",
+        "AWS Auto Scaling",
+        "AWS CloudFormation",
+        "AWS Elastic Beanstalk"
+      ],
+      "correct_answers": [
+        "AWS Auto Scaling"
+      ]
+    },
+    {
+      "question_number": 21,
+      "question_text": "Which AWS support plan provides a Technical Account Manager (TAM) and the fastest response times for critical issues?",
+      "possible_answers": [
+        "Basic",
+        "Developer",
+        "Business",
+        "Enterprise"
+      ],
+      "correct_answers": [
+        "Enterprise"
+      ]
+    },
+    {
+      "question_number": 22,
+      "question_text": "Which of the following services are global in scope (not tied to a specific AWS Region)? (Select TWO.)",
+      "possible_answers": [
+        "Amazon S3",
+        "AWS IAM",
+        "Amazon Route 53",
+        "Amazon EC2",
+        "Amazon RDS"
+      ],
+      "correct_answers": [
+        "AWS IAM",
+        "Amazon Route 53"
+      ]
+    },
+    {
+      "question_number": 23,
+      "question_text": "Which AWS service provides a fully managed, petabyte-scale data warehouse for business intelligence and analytics?",
+      "possible_answers": [
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon Aurora"
+      ],
+      "correct_answers": [
+        "Amazon Redshift"
+      ]
+    },
+    {
+      "question_number": 24,
+      "question_text": "A company wants to give its developers secure access to AWS resources without creating IAM users for each developer. They want to federate with their existing corporate directory. Which AWS service should they use?",
+      "possible_answers": [
+        "AWS Single Sign-On (SSO)",
+        "Amazon Cognito",
+        "AWS Directory Service",
+        "AWS IAM Identity Center"
+      ],
+      "correct_answers": [
+        "AWS IAM Identity Center"
+      ]
+    },
+    {
+      "question_number": 25,
+      "question_text": "Which of the following statements about Availability Zones are true? (Select TWO.)",
+      "possible_answers": [
+        "Each Availability Zone is isolated from others to prevent failure spread",
+        "Availability Zones are connected by low-latency links",
+        "A single Availability Zone can span multiple AWS Regions",
+        "Data transfer between Availability Zones is free",
+        "An Availability Zone is a collection of edge locations"
+      ],
+      "correct_answers": [
+        "Each Availability Zone is isolated from others to prevent failure spread",
+        "Availability Zones are connected by low-latency links"
+      ]
+    },
+    {
+      "question_number": 26,
+      "question_text": "Which AWS service is used to continuously deliver software changes automatically using pipelines?",
+      "possible_answers": [
+        "AWS CodeDeploy",
+        "AWS CodePipeline",
+        "AWS CodeBuild",
+        "AWS CodeCommit"
+      ],
+      "correct_answers": [
+        "AWS CodePipeline"
+      ]
+    },
+    {
+      "question_number": 27,
+      "question_text": "A company has a steady-state workload that will run for 3 years. Which purchasing option provides the highest discount?",
+      "possible_answers": [
+        "On-Demand Instances",
+        "Spot Instances",
+        "3-year All Upfront Standard Reserved Instances",
+        "3-year No Upfront Convertible Reserved Instances"
+      ],
+      "correct_answers": [
+        "3-year All Upfront Standard Reserved Instances"
+      ]
+    },
+    {
+      "question_number": 28,
+      "question_text": "Which AWS service can help you automatically recover EC2 instances if they become impaired due to a hardware failure?",
+      "possible_answers": [
+        "Amazon CloudWatch",
+        "AWS Auto Scaling",
+        "AWS Elastic Beanstalk",
+        "AWS CloudFormation"
+      ],
+      "correct_answers": [
+        "AWS Auto Scaling"
+      ]
+    },
+    {
+      "question_number": 29,
+      "question_text": "Which of the following are responsibilities of AWS under the Shared Responsibility Model? (Select TWO.)",
+      "possible_answers": [
+        "Patching the guest operating system on EC2",
+        "Physical security of data centers",
+        "Managing user access permissions",
+        "Patching the hypervisor",
+        "Encrypting data in transit"
+      ],
+      "correct_answers": [
+        "Physical security of data centers",
+        "Patching the hypervisor"
+      ]
+    },
+    {
+      "question_number": 30,
+      "question_text": "Which AWS service can be used to create a scalable and highly available DNS service that routes end users to applications?",
+      "possible_answers": [
+        "Amazon Route 53",
+        "AWS Global Accelerator",
+        "Amazon CloudFront",
+        "Elastic Load Balancing"
+      ],
+      "correct_answers": [
+        "Amazon Route 53"
+      ]
+    },
+    {
+      "question_number": 31,
+      "question_text": "A company wants to set spending limits and receive alerts when their AWS costs exceed a threshold. Which tool should they use?",
+      "possible_answers": [
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Trusted Advisor",
+        "AWS Cost and Usage Report"
+      ],
+      "correct_answers": [
+        "AWS Budgets"
+      ]
+    },
+    {
+      "question_number": 32,
+      "question_text": "Which of the following is an AWS Cloud Adoption Framework (CAF) perspective that focuses on ensuring cloud investments accelerate business outcomes?",
+      "possible_answers": [
+        "Platform Perspective",
+        "Security Perspective",
+        "Business Perspective",
+        "Operations Perspective"
+      ],
+      "correct_answers": [
+        "Business Perspective"
+      ]
+    },
+    {
+      "question_number": 33,
+      "question_text": "Which AWS service allows you to store Docker images and run containers in a managed environment?",
+      "possible_answers": [
+        "Amazon ECS with Fargate",
+        "AWS Lambda",
+        "Amazon EC2",
+        "AWS Batch"
+      ],
+      "correct_answers": [
+        "Amazon ECS with Fargate"
+      ]
+    },
+    {
+      "question_number": 34,
+      "question_text": "A company is concerned about the risk of accidentally deleting objects in an S3 bucket. Which feature should they enable to preserve previous versions of objects?",
+      "possible_answers": [
+        "S3 Lifecycle Policies",
+        "S3 Versioning",
+        "S3 MFA Delete",
+        "S3 Access Points"
+      ],
+      "correct_answers": [
+        "S3 Versioning"
+      ]
+    },
+    {
+      "question_number": 35,
+      "question_text": "Which of the following are true about Amazon EC2 On-Demand Instances? (Select TWO.)",
+      "possible_answers": [
+        "You pay for compute capacity by the hour or second with no long-term commitment",
+        "They are the cheapest EC2 pricing option",
+        "They are ideal for workloads with unpredictable usage patterns",
+        "You must reserve capacity for at least one year",
+        "They are best for batch processing jobs that can be interrupted"
+      ],
+      "correct_answers": [
+        "You pay for compute capacity by the hour or second with no long-term commitment",
+        "They are ideal for workloads with unpredictable usage patterns"
+      ]
+    },
+    {
+      "question_number": 36,
+      "question_text": "Which AWS service provides a fully managed, serverless data integration service that makes it easy to discover, prepare, and combine data for analytics and machine learning?",
+      "possible_answers": [
+        "AWS Glue",
+        "Amazon EMR",
+        "Amazon Athena",
+        "AWS Data Pipeline"
+      ],
+      "correct_answers": [
+        "AWS Glue"
+      ]
+    },
+    {
+      "question_number": 37,
+      "question_text": "A company needs to establish a dedicated, private network connection from its on-premises data center to AWS. Which service should it use?",
+      "possible_answers": [
+        "AWS Site-to-Site VPN",
+        "AWS Direct Connect",
+        "Amazon VPC Peering",
+        "AWS Transit Gateway"
+      ],
+      "correct_answers": [
+        "AWS Direct Connect"
+      ]
+    },
+    {
+      "question_number": 38,
+      "question_text": "Which of the following AWS services can be used to deploy a web application with automated scaling and load balancing without managing the underlying infrastructure?",
+      "possible_answers": [
+        "Amazon EC2",
+        "AWS Elastic Beanstalk",
+        "AWS CloudFormation",
+        "Amazon Lightsail"
+      ],
+      "correct_answers": [
+        "AWS Elastic Beanstalk"
+      ]
+    },
+    {
+      "question_number": 39,
+      "question_text": "Under the AWS Shared Responsibility Model, which of the following is the customer's sole responsibility for an RDS database?",
+      "possible_answers": [
+        "Patching the database engine",
+        "Managing the underlying host operating system",
+        "Managing data and access permissions",
+        "Backup and disaster recovery"
+      ],
+      "correct_answers": [
+        "Managing data and access permissions"
+      ]
+    },
+    {
+      "question_number": 40,
+      "question_text": "Which AWS service provides a managed, scalable file storage for use with EC2 instances that can be accessed by multiple instances simultaneously?",
+      "possible_answers": [
+        "Amazon EBS",
+        "Amazon EFS",
+        "Amazon S3",
+        "Amazon FSx"
+      ],
+      "correct_answers": [
+        "Amazon EFS"
+      ]
+    },
+    {
+      "question_number": 41,
+      "question_text": "A company wants to receive real-time notifications when a new object is uploaded to an S3 bucket. Which service can be used to trigger a Lambda function?",
+      "possible_answers": [
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon EventBridge",
+        "S3 Event Notifications"
+      ],
+      "correct_answers": [
+        "S3 Event Notifications"
+      ]
+    },
+    {
+      "question_number": 42,
+      "question_text": "Which of the following are benefits of using AWS Organizations? (Select TWO.)",
+      "possible_answers": [
+        "Consolidated billing across multiple accounts",
+        "Automatic data replication across accounts",
+        "Centralized control of service policies",
+        "Free data transfer between all accounts",
+        "Unlimited number of accounts"
+      ],
+      "correct_answers": [
+        "Consolidated billing across multiple accounts",
+        "Centralized control of service policies"
+      ]
+    },
+    {
+      "question_number": 43,
+      "question_text": "Which AWS service can be used to add user sign-up, sign-in, and access control to web and mobile applications?",
+      "possible_answers": [
+        "AWS IAM",
+        "Amazon Cognito",
+        "AWS Directory Service",
+        "AWS SSO"
+      ],
+      "correct_answers": [
+        "Amazon Cognito"
+      ]
+    },
+    {
+      "question_number": 44,
+      "question_text": "A company wants to deploy a critical application across multiple data centers to ensure high availability. Which AWS Global Infrastructure component provides physically separate locations within a Region?",
+      "possible_answers": [
+        "Edge locations",
+        "Availability Zones",
+        "Local Zones",
+        "Wavelength Zones"
+      ],
+      "correct_answers": [
+        "Availability Zones"
+      ]
+    },
+    {
+      "question_number": 45,
+      "question_text": "Which AWS service is a web application firewall that helps protect web applications from common web exploits?",
+      "possible_answers": [
+        "AWS Shield",
+        "AWS WAF",
+        "AWS Network Firewall",
+        "Amazon GuardDuty"
+      ],
+      "correct_answers": [
+        "AWS WAF"
+      ]
+    },
+    {
+      "question_number": 46,
+      "question_text": "Which of the following describe the concept of elasticity in AWS? (Select TWO.)",
+      "possible_answers": [
+        "The ability to automatically scale resources up or down based on demand",
+        "Paying only for what you use",
+        "The ability to recover from failures quickly",
+        "Running applications on multiple Availability Zones",
+        "Replacing upfront capital expense with variable expense"
+      ],
+      "correct_answers": [
+        "The ability to automatically scale resources up or down based on demand",
+        "Paying only for what you use"
+      ]
+    },
+    {
+      "question_number": 47,
+      "question_text": "Which AWS service can be used to analyze and visualize data, create dashboards, and perform ad-hoc queries on data stored in S3?",
+      "possible_answers": [
+        "Amazon QuickSight",
+        "Amazon Athena",
+        "AWS Glue",
+        "Amazon Redshift"
+      ],
+      "correct_answers": [
+        "Amazon QuickSight"
+      ]
+    },
+    {
+      "question_number": 48,
+      "question_text": "A company wants to migrate a large amount of on-premises data to AWS using a physical device. Which service should they use?",
+      "possible_answers": [
+        "AWS DataSync",
+        "AWS Snowball Edge",
+        "AWS Storage Gateway",
+        "AWS Transfer Family"
+      ],
+      "correct_answers": [
+        "AWS Snowball Edge"
+      ]
+    },
+    {
+      "question_number": 49,
+      "question_text": "Which of the following is true about AWS Regions?",
+      "possible_answers": [
+        "Each Region consists of multiple Availability Zones",
+        "A Region is a single data center",
+        "Regions are connected by the public internet",
+        "All AWS services are available in every Region"
+      ],
+      "correct_answers": [
+        "Each Region consists of multiple Availability Zones"
+      ]
+    },
+    {
+      "question_number": 50,
+      "question_text": "Which AWS service provides a low-cost, durable storage solution for data that is accessed infrequently and requires retrieval in minutes?",
+      "possible_answers": [
+        "S3 Glacier Deep Archive",
+        "S3 Glacier Flexible Retrieval",
+        "S3 Standard-IA",
+        "S3 One Zone-IA"
+      ],
+      "correct_answers": [
+        "S3 Glacier Flexible Retrieval"
+      ]
+    },
+    {
+      "question_number": 51,
+      "question_text": "A company needs to ensure that its EC2 instances are distributed across multiple isolated locations to prevent a single point of failure. Which best practice should they follow?",
+      "possible_answers": [
+        "Use multiple AWS Regions",
+        "Use multiple Availability Zones within a Region",
+        "Use multiple edge locations",
+        "Use multiple VPCs"
+      ],
+      "correct_answers": [
+        "Use multiple Availability Zones within a Region"
+      ]
+    },
+    {
+      "question_number": 52,
+      "question_text": "Which AWS service is a fully managed search and analytics engine used for log analytics, real-time application monitoring, and clickstream analysis?",
+      "possible_answers": [
+        "Amazon OpenSearch Service",
+        "Amazon Elasticsearch Service",
+        "Amazon CloudSearch",
+        "Amazon Kinesis"
+      ],
+      "correct_answers": [
+        "Amazon OpenSearch Service"
+      ]
+    },
+    {
+      "question_number": 53,
+      "question_text": "Which of the following are advantages of cloud computing over on-premises infrastructure? (Select TWO.)",
+      "possible_answers": [
+        "Trade capital expense for variable expense",
+        "Requires long-term capacity planning",
+        "Increased speed and agility",
+        "Higher upfront costs",
+        "Fixed monthly costs regardless of usage"
+      ],
+      "correct_answers": [
+        "Trade capital expense for variable expense",
+        "Increased speed and agility"
+      ]
+    },
+    {
+      "question_number": 54,
+      "question_text": "Which AWS service can be used to automate the patching of EC2 instances and ensure compliance with security standards?",
+      "possible_answers": [
+        "AWS Systems Manager Patch Manager",
+        "Amazon Inspector",
+        "AWS Config",
+        "AWS Trusted Advisor"
+      ],
+      "correct_answers": [
+        "AWS Systems Manager Patch Manager"
+      ]
+    },
+    {
+      "question_number": 55,
+      "question_text": "A company wants to send transactional emails to its customers at scale. Which AWS service is best suited for this?",
+      "possible_answers": [
+        "Amazon SNS",
+        "Amazon SES",
+        "Amazon Pinpoint",
+        "Amazon SQS"
+      ],
+      "correct_answers": [
+        "Amazon SES"
+      ]
+    },
+    {
+      "question_number": 56,
+      "question_text": "Which of the following is a responsibility of AWS in the Shared Responsibility Model for EC2?",
+      "possible_answers": [
+        "Securing the operating system",
+        "Patching the underlying host infrastructure",
+        "Managing firewall rules",
+        "Encrypting data on the instance"
+      ],
+      "correct_answers": [
+        "Patching the underlying host infrastructure"
+      ]
+    },
+    {
+      "question_number": 57,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable relational database that supports PostgreSQL and MySQL compatibility?",
+      "possible_answers": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Aurora",
+        "Amazon Redshift"
+      ],
+      "correct_answers": [
+        "Amazon Aurora"
+      ]
+    },
+    {
+      "question_number": 58,
+      "question_text": "A company wants to run short-lived, event-driven functions without managing servers. Which AWS service should they use?",
+      "possible_answers": [
+        "AWS Lambda",
+        "Amazon ECS",
+        "Amazon EC2",
+        "AWS Elastic Beanstalk"
+      ],
+      "correct_answers": [
+        "AWS Lambda"
+      ]
+    },
+    {
+      "question_number": 59,
+      "question_text": "Which of the following are valid EC2 instance pricing models? (Select THREE.)",
+      "possible_answers": [
+        "On-Demand",
+        "Spot",
+        "Reserved",
+        "Serverless",
+        "Provisioned",
+        "Dedicated"
+      ],
+      "correct_answers": [
+        "On-Demand",
+        "Spot",
+        "Reserved"
+      ]
+    },
+    {
+      "question_number": 60,
+      "question_text": "Which AWS service provides a scalable, in-memory cache for applications to improve database performance?",
+      "possible_answers": [
+        "Amazon ElastiCache",
+        "Amazon DynamoDB Accelerator",
+        "Amazon RDS",
+        "Amazon S3"
+      ],
+      "correct_answers": [
+        "Amazon ElastiCache"
+      ]
+    },
+    {
+      "question_number": 61,
+      "question_text": "A company wants to provide its employees with fully managed virtual desktops in the cloud. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon WorkSpaces",
+        "Amazon AppStream 2.0",
+        "Amazon EC2",
+        "AWS Elastic Beanstalk"
+      ],
+      "correct_answers": [
+        "Amazon WorkSpaces"
+      ]
+    },
+    {
+      "question_number": 62,
+      "question_text": "Which of the following AWS services can be used to orchestrate multiple AWS services into serverless workflows?",
+      "possible_answers": [
+        "AWS Step Functions",
+        "Amazon SQS",
+        "Amazon SNS",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "AWS Step Functions"
+      ]
+    },
+    {
+      "question_number": 63,
+      "question_text": "Under the AWS Shared Responsibility Model, which of the following is the customer's responsibility for an S3 bucket?",
+      "possible_answers": [
+        "Protecting the physical infrastructure of S3",
+        "Configuring bucket permissions and access policies",
+        "Ensuring durability of stored objects",
+        "Patching the S3 service"
+      ],
+      "correct_answers": [
+        "Configuring bucket permissions and access policies"
+      ]
+    },
+    {
+      "question_number": 64,
+      "question_text": "Which AWS service helps you automatically scale your database storage capacity based on usage?",
+      "possible_answers": [
+        "Amazon RDS with Storage Auto Scaling",
+        "Amazon DynamoDB",
+        "Amazon Redshift",
+        "Amazon Aurora"
+      ],
+      "correct_answers": [
+        "Amazon RDS with Storage Auto Scaling"
+      ]
+    },
+    {
+      "question_number": 65,
+      "question_text": "A company wants to migrate its on-premises applications to AWS with minimal modifications. Which service allows them to run containerized applications on AWS without managing the control plane?",
+      "possible_answers": [
+        "Amazon EKS",
+        "Amazon ECS with Fargate",
+        "Amazon EC2",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "Amazon ECS with Fargate"
+      ]
+    },
+    {
+      "question_number": 66,
+      "question_text": "Which of the following are AWS Cloud Adoption Framework (CAF) perspectives? (Select TWO.)",
+      "possible_answers": [
+        "Platform",
+        "Security",
+        "Data",
+        "Reliability",
+        "Cost"
+      ],
+      "correct_answers": [
+        "Platform",
+        "Security"
+      ]
+    },
+    {
+      "question_number": 67,
+      "question_text": "Which AWS service provides a managed, scalable, and secure file storage for Windows-based applications?",
+      "possible_answers": [
+        "Amazon EFS",
+        "Amazon FSx for Windows File Server",
+        "Amazon S3",
+        "Amazon EBS"
+      ],
+      "correct_answers": [
+        "Amazon FSx for Windows File Server"
+      ]
+    },
+    {
+      "question_number": 68,
+      "question_text": "A company wants to analyze its AWS cost and usage data with advanced filtering and grouping. Which tool should they use?",
+      "possible_answers": [
+        "AWS Cost and Usage Report",
+        "AWS Cost Explorer",
+        "AWS Budgets",
+        "AWS Pricing Calculator"
+      ],
+      "correct_answers": [
+        "AWS Cost Explorer"
+      ]
+    },
+    {
+      "question_number": 69,
+      "question_text": "Which of the following is true about AWS Edge Locations?",
+      "possible_answers": [
+        "They are used primarily for caching content with CloudFront",
+        "Each AWS Region has exactly one edge location",
+        "Edge locations are only used for DNS resolution",
+        "Data stored at edge locations is automatically backed up to multiple Regions"
+      ],
+      "correct_answers": [
+        "They are used primarily for caching content with CloudFront"
+      ]
+    },
+    {
+      "question_number": 70,
+      "question_text": "Which AWS service provides a fully managed, serverless data warehouse that automatically scales and charges only for queries run?",
+      "possible_answers": [
+        "Amazon Redshift Serverless",
+        "Amazon Athena",
+        "Amazon QuickSight",
+        "AWS Glue"
+      ],
+      "correct_answers": [
+        "Amazon Redshift Serverless"
+      ]
+    },
+    {
+      "question_number": 71,
+      "question_text": "A company needs to securely store secrets such as database passwords and API keys. Which AWS service is designed for this?",
+      "possible_answers": [
+        "AWS Systems Manager Parameter Store",
+        "AWS Secrets Manager",
+        "AWS KMS",
+        "AWS IAM"
+      ],
+      "correct_answers": [
+        "AWS Secrets Manager"
+      ]
+    },
+    {
+      "question_number": 72,
+      "question_text": "Which of the following are benefits of using AWS Direct Connect? (Select TWO.)",
+      "possible_answers": [
+        "Reduced bandwidth costs",
+        "More consistent network performance than internet-based connections",
+        "Automatic encryption of all data",
+        "Faster data transfer than Snowball",
+        "No setup or configuration required"
+      ],
+      "correct_answers": [
+        "Reduced bandwidth costs",
+        "More consistent network performance than internet-based connections"
+      ]
+    },
+    {
+      "question_number": 73,
+      "question_text": "Which AWS service is used to create and manage encryption keys for data at rest and in transit?",
+      "possible_answers": [
+        "AWS KMS",
+        "AWS CloudHSM",
+        "AWS Certificate Manager",
+        "AWS Secrets Manager"
+      ],
+      "correct_answers": [
+        "AWS KMS"
+      ]
+    },
+    {
+      "question_number": 74,
+      "question_text": "A company wants to run a high-performance computing (HPC) workload that requires low-latency network performance between EC2 instances. Which instance placement option should they choose?",
+      "possible_answers": [
+        "Placement Group - Cluster",
+        "Placement Group - Spread",
+        "Placement Group - Partition",
+        "Dedicated Host"
+      ],
+      "correct_answers": [
+        "Placement Group - Cluster"
+      ]
+    },
+    {
+      "question_number": 75,
+      "question_text": "Which of the following AWS services provides a highly available, durable, and scalable object storage with 99.999999999% (11 9's) durability?",
+      "possible_answers": [
+        "Amazon EBS",
+        "Amazon EFS",
+        "Amazon S3",
+        "Amazon RDS"
+      ],
+      "correct_answers": [
+        "Amazon S3"
+      ]
+    },
+    {
+      "question_number": 76,
+      "question_text": "Which AWS support plan provides access to the AWS Support API for programmatic case management and all Trusted Advisor checks?",
+      "possible_answers": [
+        "Basic",
+        "Developer",
+        "Business",
+        "Enterprise"
+      ],
+      "correct_answers": [
+        "Business"
+      ]
+    },
+    {
+      "question_number": 77,
+      "question_text": "A company wants to perform ad-hoc SQL queries directly on data stored in S3 without loading it into a database. Which service should they use?",
+      "possible_answers": [
+        "Amazon Redshift",
+        "Amazon Athena",
+        "AWS Glue",
+        "Amazon RDS"
+      ],
+      "correct_answers": [
+        "Amazon Athena"
+      ]
+    },
+    {
+      "question_number": 78,
+      "question_text": "Which of the following are design principles of the Reliability pillar in the AWS Well-Architected Framework? (Select TWO.)",
+      "possible_answers": [
+        "Automatically recover from failure",
+        "Implement horizontal scaling",
+        "Use serverless architectures",
+        "Optimize for cost",
+        "Reduce latency"
+      ],
+      "correct_answers": [
+        "Automatically recover from failure",
+        "Implement horizontal scaling"
+      ]
+    },
+    {
+      "question_number": 79,
+      "question_text": "Which AWS service provides a fully managed, real-time streaming data platform that can capture, process, and analyze data streams?",
+      "possible_answers": [
+        "Amazon Kinesis",
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon MQ"
+      ],
+      "correct_answers": [
+        "Amazon Kinesis"
+      ]
+    },
+    {
+      "question_number": 80,
+      "question_text": "A company needs to transfer data from an on-premises file server to S3 on a scheduled basis. Which service is optimized for this?",
+      "possible_answers": [
+        "AWS DataSync",
+        "AWS Storage Gateway",
+        "AWS Snowball",
+        "AWS Transfer Family"
+      ],
+      "correct_answers": [
+        "AWS DataSync"
+      ]
+    },
+    {
+      "question_number": 81,
+      "question_text": "Which of the following is true about AWS Budgets?",
+      "possible_answers": [
+        "It can send alerts when actual or forecasted cost exceeds a threshold",
+        "It automatically terminates resources when budget is exceeded",
+        "It requires a paid support plan",
+        "It can only track costs, not usage"
+      ],
+      "correct_answers": [
+        "It can send alerts when actual or forecasted cost exceeds a threshold"
+      ]
+    },
+    {
+      "question_number": 82,
+      "question_text": "Which AWS service provides a managed, distributed, and highly available message broker for Apache ActiveMQ and RabbitMQ?",
+      "possible_answers": [
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon MQ",
+        "Amazon EventBridge"
+      ],
+      "correct_answers": [
+        "Amazon MQ"
+      ]
+    },
+    {
+      "question_number": 83,
+      "question_text": "A company wants to ensure that its S3 buckets are not publicly accessible. Which AWS service can continuously monitor and enforce compliance with this rule?",
+      "possible_answers": [
+        "AWS Config",
+        "AWS Trusted Advisor",
+        "Amazon GuardDuty",
+        "AWS Security Hub"
+      ],
+      "correct_answers": [
+        "AWS Config"
+      ]
+    },
+    {
+      "question_number": 84,
+      "question_text": "Which of the following are characteristics of Convertible Reserved Instances? (Select TWO.)",
+      "possible_answers": [
+        "Allows changing instance family, OS, tenancy, and payment option",
+        "Provides a higher discount than Standard Reserved Instances",
+        "Cannot be exchanged for a different RI",
+        "Can be exchanged for a different RI of equal or greater value",
+        "Only available for 1-year terms"
+      ],
+      "correct_answers": [
+        "Allows changing instance family, OS, tenancy, and payment option",
+        "Can be exchanged for a different RI of equal or greater value"
+      ]
+    },
+    {
+      "question_number": 85,
+      "question_text": "Which AWS service provides a fully managed, scalable, and highly available key-value store for session data, leaderboards, and real-time analytics?",
+      "possible_answers": [
+        "Amazon DynamoDB",
+        "Amazon ElastiCache",
+        "Amazon RDS",
+        "Amazon MemoryDB"
+      ],
+      "correct_answers": [
+        "Amazon DynamoDB"
+      ]
+    },
+    {
+      "question_number": 86,
+      "question_text": "A company wants to provision a logically isolated section of the AWS Cloud where they can launch resources in a virtual network they define. Which service should they use?",
+      "possible_answers": [
+        "Amazon VPC",
+        "AWS Direct Connect",
+        "AWS Transit Gateway",
+        "Amazon Route 53"
+      ],
+      "correct_answers": [
+        "Amazon VPC"
+      ]
+    },
+    {
+      "question_number": 87,
+      "question_text": "Which of the following are benefits of using AWS Organizations? (Select TWO.)",
+      "possible_answers": [
+        "Centralized management of multiple AWS accounts",
+        "Automatic backup of all resources",
+        "Policy-based control over services",
+        "Free cross-Region data transfer",
+        "Unlimited storage for all accounts"
+      ],
+      "correct_answers": [
+        "Centralized management of multiple AWS accounts",
+        "Policy-based control over services"
+      ]
+    },
+    {
+      "question_number": 88,
+      "question_text": "Which AWS service provides a fully managed, cost-effective, and scalable service to move large amounts of data into and out of AWS using appliances?",
+      "possible_answers": [
+        "AWS Snow Family",
+        "AWS DataSync",
+        "AWS Storage Gateway",
+        "AWS Transfer Family"
+      ],
+      "correct_answers": [
+        "AWS Snow Family"
+      ]
+    },
+    {
+      "question_number": 89,
+      "question_text": "Under the Shared Responsibility Model, who is responsible for patch management of the guest operating system on an EC2 instance?",
+      "possible_answers": [
+        "AWS",
+        "Customer",
+        "Both AWS and customer",
+        "Third-party vendor"
+      ],
+      "correct_answers": [
+        "Customer"
+      ]
+    },
+    {
+      "question_number": 90,
+      "question_text": "Which AWS service can be used to run code in response to events from AWS services or HTTP requests without provisioning servers?",
+      "possible_answers": [
+        "AWS Lambda",
+        "Amazon EC2",
+        "AWS Elastic Beanstalk",
+        "Amazon ECS"
+      ],
+      "correct_answers": [
+        "AWS Lambda"
+      ]
+    },
+    {
+      "question_number": 91,
+      "question_text": "A company wants to enable Multi-Factor Authentication (MFA) for its AWS account root user. Which of the following are supported MFA devices? (Select TWO.)",
+      "possible_answers": [
+        "Virtual MFA device (Google Authenticator)",
+        "Email-based MFA",
+        "U2F security key (YubiKey)",
+        "Phone call verification",
+        "Text message (SMS) only"
+      ],
+      "correct_answers": [
+        "Virtual MFA device (Google Authenticator)",
+        "U2F security key (YubiKey)"
+      ]
+    },
+    {
+      "question_number": 92,
+      "question_text": "Which AWS service provides a fully managed, petabyte-scale data lake service that can store structured and unstructured data?",
+      "possible_answers": [
+        "Amazon S3",
+        "Amazon Redshift",
+        "Amazon RDS",
+        "Amazon EMR"
+      ],
+      "correct_answers": [
+        "Amazon S3"
+      ]
+    },
+    {
+      "question_number": 93,
+      "question_text": "A company wants to create a disaster recovery plan by copying snapshots of EBS volumes to another AWS Region. Which service automates this?",
+      "possible_answers": [
+        "AWS Backup",
+        "AWS DataSync",
+        "Amazon S3 Replication",
+        "EBS Snapshots"
+      ],
+      "correct_answers": [
+        "AWS Backup"
+      ]
+    },
+    {
+      "question_number": 94,
+      "question_text": "Which of the following are true about AWS Free Tier? (Select TWO.)",
+      "possible_answers": [
+        "Includes 750 hours per month of EC2 t2.micro for 12 months",
+        "Includes 5 GB of S3 Standard storage permanently",
+        "Requires a paid support plan to access",
+        "Is available only for the first month",
+        "Includes all AWS services"
+      ],
+      "correct_answers": [
+        "Includes 750 hours per month of EC2 t2.micro for 12 months",
+        "Includes 5 GB of S3 Standard storage permanently"
+      ]
+    },
+    {
+      "question_number": 95,
+      "question_text": "Which AWS service provides a scalable, cloud-native relational database that supports both MySQL and PostgreSQL, and offers up to 5x faster performance than standard MySQL?",
+      "possible_answers": [
+        "Amazon RDS",
+        "Amazon Aurora",
+        "Amazon Redshift",
+        "Amazon DynamoDB"
+      ],
+      "correct_answers": [
+        "Amazon Aurora"
+      ]
+    },
+    {
+      "question_number": 96,
+      "question_text": "A company wants to collect, process, and analyze real-time video and data streams from millions of devices. Which AWS service is designed for this?",
+      "possible_answers": [
+        "Amazon Kinesis Video Streams",
+        "AWS Elemental MediaLive",
+        "Amazon S3",
+        "Amazon CloudFront"
+      ],
+      "correct_answers": [
+        "Amazon Kinesis Video Streams"
+      ]
+    },
+    {
+      "question_number": 97,
+      "question_text": "Which of the following is a key benefit of AWS CloudFormation?",
+      "possible_answers": [
+        "Infrastructure as Code (IaC)",
+        "Automatic scaling of resources",
+        "Built-in cost optimization",
+        "Real-time monitoring"
+      ],
+      "correct_answers": [
+        "Infrastructure as Code (IaC)"
+      ]
+    },
+    {
+      "question_number": 98,
+      "question_text": "Which AWS service provides a fully managed, highly available, and secure email service for sending and receiving emails?",
+      "possible_answers": [
+        "Amazon SES",
+        "Amazon SNS",
+        "Amazon WorkMail",
+        "Amazon Connect"
+      ],
+      "correct_answers": [
+        "Amazon SES"
+      ]
+    },
+    {
+      "question_number": 99,
+      "question_text": "A company wants to create a custom domain name for its application load balancer. Which AWS service is used for domain registration and DNS routing?",
+      "possible_answers": [
+        "Amazon Route 53",
+        "AWS Global Accelerator",
+        "Amazon CloudFront",
+        "AWS Certificate Manager"
+      ],
+      "correct_answers": [
+        "Amazon Route 53"
+      ]
+    },
+    {
+      "question_number": 100,
+      "question_text": "Which of the following are use cases for Amazon EBS Snapshots? (Select TWO.)",
+      "possible_answers": [
+        "Disaster recovery",
+        "Creating a backup before making changes to an instance",
+        "Running a database query",
+        "Hosting a static website",
+        "Real-time data streaming"
+      ],
+      "correct_answers": [
+        "Disaster recovery",
+        "Creating a backup before making changes to an instance"
+      ]
+    },
+    {
+      "question_number": 101,
+      "question_text": "Which AWS service provides a fully managed, serverless data integration service that helps discover, prepare, and combine data for analytics?",
+      "possible_answers": [
+        "AWS Glue",
+        "Amazon Athena",
+        "AWS Data Pipeline",
+        "Amazon EMR"
+      ],
+      "correct_answers": [
+        "AWS Glue"
+      ]
+    },
+    {
+      "question_number": 102,
+      "question_text": "A company wants to reduce its EC2 costs for a batch processing job that can be interrupted. Which purchasing option is most cost-effective?",
+      "possible_answers": [
+        "On-Demand",
+        "Spot",
+        "Reserved - All Upfront",
+        "Dedicated Host"
+      ],
+      "correct_answers": [
+        "Spot"
+      ]
+    },
+    {
+      "question_number": 103,
+      "question_text": "Which of the following is true about AWS Shield Advanced?",
+      "possible_answers": [
+        "It provides enhanced DDoS protection and access to the DDoS Response Team",
+        "It is free for all AWS customers",
+        "It only protects against application-layer attacks",
+        "It requires an Enterprise support plan"
+      ],
+      "correct_answers": [
+        "It provides enhanced DDoS protection and access to the DDoS Response Team"
+      ]
+    },
+    {
+      "question_number": 104,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable in-memory data store compatible with Redis?",
+      "possible_answers": [
+        "Amazon ElastiCache for Redis",
+        "Amazon DynamoDB Accelerator",
+        "Amazon MemoryDB for Redis",
+        "Amazon RDS"
+      ],
+      "correct_answers": [
+        "Amazon ElastiCache for Redis"
+      ]
+    },
+    {
+      "question_number": 105,
+      "question_text": "A company wants to give its developers access to AWS resources based on their job function (e.g., read-only access, developer access). Which IAM feature should they use?",
+      "possible_answers": [
+        "IAM Groups",
+        "IAM Roles",
+        "IAM Policies",
+        "IAM Users"
+      ],
+      "correct_answers": [
+        "IAM Groups"
+      ]
+    },
+    {
+      "question_number": 106,
+      "question_text": "Which of the following are components of an AWS VPC? (Select TWO.)",
+      "possible_answers": [
+        "Subnets",
+        "Edge locations",
+        "Route tables",
+        "Availability Zones",
+        "S3 buckets"
+      ],
+      "correct_answers": [
+        "Subnets",
+        "Route tables"
+      ]
+    },
+    {
+      "question_number": 107,
+      "question_text": "Which AWS service provides a fully managed, serverless SQL query engine that allows you to query data in S3 using standard SQL?",
+      "possible_answers": [
+        "Amazon Athena",
+        "Amazon Redshift",
+        "AWS Glue",
+        "Amazon RDS"
+      ],
+      "correct_answers": [
+        "Amazon Athena"
+      ]
+    },
+    {
+      "question_number": 108,
+      "question_text": "A company wants to automatically move objects from S3 Standard to S3 Glacier after 30 days. Which feature should they configure?",
+      "possible_answers": [
+        "S3 Lifecycle Policies",
+        "S3 Versioning",
+        "S3 Replication",
+        "S3 Event Notifications"
+      ],
+      "correct_answers": [
+        "S3 Lifecycle Policies"
+      ]
+    },
+    {
+      "question_number": 109,
+      "question_text": "Which of the following is true about the AWS Shared Responsibility Model for Lambda?",
+      "possible_answers": [
+        "AWS is responsible for securing the Lambda execution environment",
+        "Customer is responsible for patching the runtime",
+        "AWS is responsible for securing customer code",
+        "Customer is responsible for scaling Lambda functions"
+      ],
+      "correct_answers": [
+        "AWS is responsible for securing the Lambda execution environment"
+      ]
+    },
+    {
+      "question_number": 110,
+      "question_text": "Which AWS service provides a fully managed, cloud-based contact center that can scale to support any number of agents?",
+      "possible_answers": [
+        "Amazon Connect",
+        "Amazon Chime",
+        "Amazon WorkSpaces",
+        "Amazon Pinpoint"
+      ],
+      "correct_answers": [
+        "Amazon Connect"
+      ]
+    },
+    {
+      "question_number": 111,
+      "question_text": "A company wants to run a PostgreSQL database on AWS with automated backups, patch management, and high availability. Which service should they use?",
+      "possible_answers": [
+        "Amazon RDS for PostgreSQL",
+        "Amazon EC2 with PostgreSQL installed",
+        "Amazon Aurora Serverless",
+        "Amazon DynamoDB"
+      ],
+      "correct_answers": [
+        "Amazon RDS for PostgreSQL"
+      ]
+    },
+    {
+      "question_number": 112,
+      "question_text": "Which of the following are AWS compute services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon EC2",
+        "Amazon S3",
+        "AWS Lambda",
+        "Amazon RDS",
+        "Amazon VPC"
+      ],
+      "correct_answers": [
+        "Amazon EC2",
+        "AWS Lambda"
+      ]
+    },
+    {
+      "question_number": 113,
+      "question_text": "Which AWS service provides a managed, cloud-native block storage for EC2 instances?",
+      "possible_answers": [
+        "Amazon EBS",
+        "Amazon EFS",
+        "Amazon S3",
+        "Amazon FSx"
+      ],
+      "correct_answers": [
+        "Amazon EBS"
+      ]
+    },
+    {
+      "question_number": 114,
+      "question_text": "A company wants to automate the deployment of its application to EC2 instances behind a load balancer. Which service can be used to perform rolling updates?",
+      "possible_answers": [
+        "AWS CodeDeploy",
+        "AWS CloudFormation",
+        "AWS Elastic Beanstalk",
+        "AWS OpsWorks"
+      ],
+      "correct_answers": [
+        "AWS CodeDeploy"
+      ]
+    },
+    {
+      "question_number": 115,
+      "question_text": "Which of the following are benefits of using AWS Systems Manager? (Select TWO.)",
+      "possible_answers": [
+        "Centralized operational data",
+        "Automated patch management",
+        "Automatic scaling of EC2 instances",
+        "Managed database service",
+        "Content delivery"
+      ],
+      "correct_answers": [
+        "Centralized operational data",
+        "Automated patch management"
+      ]
+    },
+    {
+      "question_number": 116,
+      "question_text": "Which AWS service provides a fully managed, scalable, and secure file storage for Linux-based instances that supports the NFS protocol?",
+      "possible_answers": [
+        "Amazon EFS",
+        "Amazon FSx for Lustre",
+        "Amazon S3",
+        "Amazon EBS"
+      ],
+      "correct_answers": [
+        "Amazon EFS"
+      ]
+    },
+    {
+      "question_number": 117,
+      "question_text": "A company wants to monitor the CPU utilization of its EC2 instances and receive an alert when it exceeds 80%. Which services should they use? (Select TWO.)",
+      "possible_answers": [
+        "Amazon CloudWatch",
+        "AWS CloudTrail",
+        "Amazon SNS",
+        "AWS Config",
+        "AWS Trusted Advisor"
+      ],
+      "correct_answers": [
+        "Amazon CloudWatch",
+        "Amazon SNS"
+      ]
+    },
+    {
+      "question_number": 118,
+      "question_text": "Which AWS service provides a simple way to backup data across AWS services and on-premises, and supports cross-Region backups?",
+      "possible_answers": [
+        "AWS Backup",
+        "AWS Storage Gateway",
+        "AWS DataSync",
+        "AWS Snowball"
+      ],
+      "correct_answers": [
+        "AWS Backup"
+      ]
+    },
+    {
+      "question_number": 119,
+      "question_text": "Which of the following is true about Spot Instances?",
+      "possible_answers": [
+        "They can be terminated by AWS with a 2-minute notice",
+        "They are ideal for steady-state production workloads",
+        "They cannot be used with Auto Scaling",
+        "They offer a fixed discount of 50% off On-Demand"
+      ],
+      "correct_answers": [
+        "They can be terminated by AWS with a 2-minute notice"
+      ]
+    },
+    {
+      "question_number": 120,
+      "question_text": "Which AWS service provides a fully managed, highly available, and secure business email service?",
+      "possible_answers": [
+        "Amazon WorkMail",
+        "Amazon SES",
+        "Amazon Chime",
+        "Amazon Connect"
+      ],
+      "correct_answers": [
+        "Amazon WorkMail"
+      ]
+    },
+    {
+      "question_number": 121,
+      "question_text": "A company wants to run containers on AWS without managing the underlying EC2 instances. Which service should they use?",
+      "possible_answers": [
+        "Amazon ECS with Fargate",
+        "Amazon EKS",
+        "Amazon ECS with EC2",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "Amazon ECS with Fargate"
+      ]
+    },
+    {
+      "question_number": 122,
+      "question_text": "Which of the following are design principles of the Security pillar in the AWS Well-Architected Framework? (Select TWO.)",
+      "possible_answers": [
+        "Implement a strong identity foundation",
+        "Enable traceability",
+        "Automate scaling",
+        "Optimize for cost",
+        "Design for failure"
+      ],
+      "correct_answers": [
+        "Implement a strong identity foundation",
+        "Enable traceability"
+      ]
+    },
+    {
+      "question_number": 123,
+      "question_text": "Which AWS service provides a fully managed, petabyte-scale data warehouse that uses columnar storage and massive parallel processing?",
+      "possible_answers": [
+        "Amazon Redshift",
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Aurora"
+      ],
+      "correct_answers": [
+        "Amazon Redshift"
+      ]
+    },
+    {
+      "question_number": 124,
+      "question_text": "A company wants to analyze real-time streaming data from IoT devices. Which AWS service can capture, process, and analyze the data in real time?",
+      "possible_answers": [
+        "Amazon Kinesis Data Analytics",
+        "Amazon SQS",
+        "AWS Glue",
+        "Amazon Athena"
+      ],
+      "correct_answers": [
+        "Amazon Kinesis Data Analytics"
+      ]
+    },
+    {
+      "question_number": 125,
+      "question_text": "Which of the following is true about AWS Pricing Calculator?",
+      "possible_answers": [
+        "It provides estimated costs for AWS services based on usage",
+        "It only works for EC2 and S3",
+        "It requires a paid support plan",
+        "It can automatically provision resources"
+      ],
+      "correct_answers": [
+        "It provides estimated costs for AWS services based on usage"
+      ]
+    },
+    {
+      "question_number": 126,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable NoSQL database that supports JSON document storage?",
+      "possible_answers": [
+        "Amazon DynamoDB",
+        "Amazon DocumentDB",
+        "Amazon RDS",
+        "Amazon Neptune"
+      ],
+      "correct_answers": [
+        "Amazon DynamoDB"
+      ]
+    },
+    {
+      "question_number": 127,
+      "question_text": "A company wants to provide secure access to its internal applications for remote employees without exposing them to the public internet. Which AWS service should they use?",
+      "possible_answers": [
+        "AWS Client VPN",
+        "AWS Site-to-Site VPN",
+        "AWS Direct Connect",
+        "AWS Transit Gateway"
+      ],
+      "correct_answers": [
+        "AWS Client VPN"
+      ]
+    },
+    {
+      "question_number": 128,
+      "question_text": "Which of the following are types of load balancers offered by Elastic Load Balancing? (Select TWO.)",
+      "possible_answers": [
+        "Application Load Balancer",
+        "Network Load Balancer",
+        "Database Load Balancer",
+        "Compute Load Balancer",
+        "Storage Load Balancer"
+      ],
+      "correct_answers": [
+        "Application Load Balancer",
+        "Network Load Balancer"
+      ]
+    },
+    {
+      "question_number": 129,
+      "question_text": "Which AWS service provides a fully managed, scalable, and secure service for running Apache Spark workloads?",
+      "possible_answers": [
+        "Amazon EMR",
+        "AWS Glue",
+        "Amazon Athena",
+        "Amazon Redshift"
+      ],
+      "correct_answers": [
+        "Amazon EMR"
+      ]
+    },
+    {
+      "question_number": 130,
+      "question_text": "A company wants to store sensitive data in S3 with encryption at rest. Which AWS service can manage the encryption keys?",
+      "possible_answers": [
+        "AWS KMS",
+        "AWS Secrets Manager",
+        "AWS Certificate Manager",
+        "AWS CloudHSM"
+      ],
+      "correct_answers": [
+        "AWS KMS"
+      ]
+    },
+    {
+      "question_number": 131,
+      "question_text": "Which of the following are benefits of using AWS Global Accelerator? (Select TWO.)",
+      "possible_answers": [
+        "Improves application availability and performance",
+        "Provides static IP addresses",
+        "Automatically scales EC2 instances",
+        "Replaces the need for Route 53",
+        "Provides DDoS protection for free"
+      ],
+      "correct_answers": [
+        "Improves application availability and performance",
+        "Provides static IP addresses"
+      ]
+    },
+    {
+      "question_number": 132,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable graph database?",
+      "possible_answers": [
+        "Amazon Neptune",
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon DocumentDB"
+      ],
+      "correct_answers": [
+        "Amazon Neptune"
+      ]
+    },
+    {
+      "question_number": 133,
+      "question_text": "A company wants to centralize logging from multiple AWS accounts and analyze the logs for security incidents. Which service should they use?",
+      "possible_answers": [
+        "AWS Security Hub",
+        "Amazon CloudWatch Logs",
+        "AWS CloudTrail",
+        "AWS Config"
+      ],
+      "correct_answers": [
+        "AWS Security Hub"
+      ]
+    },
+    {
+      "question_number": 134,
+      "question_text": "Which of the following is true about Dedicated Hosts?",
+      "possible_answers": [
+        "They provide a physical server dedicated to a single customer",
+        "They are the cheapest EC2 pricing option",
+        "They cannot be used with existing software licenses",
+        "They are only available in specific Regions"
+      ],
+      "correct_answers": [
+        "They provide a physical server dedicated to a single customer"
+      ]
+    },
+    {
+      "question_number": 135,
+      "question_text": "Which AWS service provides a fully managed, serverless compute service that runs code in response to events and automatically scales?",
+      "possible_answers": [
+        "AWS Lambda",
+        "Amazon EC2",
+        "AWS Elastic Beanstalk",
+        "Amazon ECS"
+      ],
+      "correct_answers": [
+        "AWS Lambda"
+      ]
+    },
+    {
+      "question_number": 136,
+      "question_text": "A company wants to create a data lake on AWS and needs to crawl data sources, build a metadata catalog, and transform data. Which service should they use?",
+      "possible_answers": [
+        "AWS Glue",
+        "Amazon Athena",
+        "Amazon EMR",
+        "AWS Lake Formation"
+      ],
+      "correct_answers": [
+        "AWS Glue"
+      ]
+    },
+    {
+      "question_number": 137,
+      "question_text": "Which of the following are AWS database services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon RDS",
+        "Amazon S3",
+        "Amazon DynamoDB",
+        "Amazon EBS",
+        "Amazon CloudFront"
+      ],
+      "correct_answers": [
+        "Amazon RDS",
+        "Amazon DynamoDB"
+      ]
+    },
+    {
+      "question_number": 138,
+      "question_text": "Which AWS service provides a fully managed, scalable, and highly available service for running microservices and containerized applications?",
+      "possible_answers": [
+        "Amazon ECS",
+        "AWS Lambda",
+        "Amazon EC2",
+        "AWS Batch"
+      ],
+      "correct_answers": [
+        "Amazon ECS"
+      ]
+    },
+    {
+      "question_number": 139,
+      "question_text": "A company wants to implement a disaster recovery strategy that replicates data to another AWS Region with minimal RTO. Which service can automate failover?",
+      "possible_answers": [
+        "AWS Elastic Disaster Recovery",
+        "AWS Backup",
+        "AWS Storage Gateway",
+        "AWS DataSync"
+      ],
+      "correct_answers": [
+        "AWS Elastic Disaster Recovery"
+      ]
+    },
+    {
+      "question_number": 140,
+      "question_text": "Which of the following is true about AWS Cost and Usage Report (CUR)?",
+      "possible_answers": [
+        "It provides the most detailed cost and usage data",
+        "It is available only to Enterprise support customers",
+        "It does not include S3 storage costs",
+        "It updates once per month"
+      ],
+      "correct_answers": [
+        "It provides the most detailed cost and usage data"
+      ]
+    },
+    {
+      "question_number": 141,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable Apache Kafka service?",
+      "possible_answers": [
+        "Amazon MSK",
+        "Amazon Kinesis",
+        "Amazon MQ",
+        "Amazon SQS"
+      ],
+      "correct_answers": [
+        "Amazon MSK"
+      ]
+    },
+    {
+      "question_number": 142,
+      "question_text": "A company wants to restrict access to an S3 bucket based on the requester's IP address. Which method should they use?",
+      "possible_answers": [
+        "Bucket policy with condition",
+        "IAM policy",
+        "S3 ACL",
+        "Pre-signed URLs"
+      ],
+      "correct_answers": [
+        "Bucket policy with condition"
+      ]
+    },
+    {
+      "question_number": 143,
+      "question_text": "Which of the following are benefits of using AWS CloudTrail? (Select TWO.)",
+      "possible_answers": [
+        "Security analysis and troubleshooting",
+        "Automated scaling of resources",
+        "Compliance auditing",
+        "Real-time application performance monitoring",
+        "Cost optimization"
+      ],
+      "correct_answers": [
+        "Security analysis and troubleshooting",
+        "Compliance auditing"
+      ]
+    },
+    {
+      "question_number": 144,
+      "question_text": "Which AWS service provides a fully managed, scalable, and secure service for streaming media content to end users?",
+      "possible_answers": [
+        "AWS Elemental MediaLive",
+        "Amazon CloudFront",
+        "Amazon S3",
+        "AWS Elemental MediaConvert"
+      ],
+      "correct_answers": [
+        "AWS Elemental MediaLive"
+      ]
+    },
+    {
+      "question_number": 145,
+      "question_text": "A company wants to run a high-performance file system for Lustre workloads on AWS. Which service should they use?",
+      "possible_answers": [
+        "Amazon FSx for Lustre",
+        "Amazon EFS",
+        "Amazon S3",
+        "Amazon EBS"
+      ],
+      "correct_answers": [
+        "Amazon FSx for Lustre"
+      ]
+    },
+    {
+      "question_number": 146,
+      "question_text": "Which of the following is true about AWS Trusted Advisor?",
+      "possible_answers": [
+        "It provides best practice recommendations in five categories",
+        "It is only available to Business and Enterprise support plans",
+        "It cannot be used for security checks",
+        "It automatically fixes identified issues"
+      ],
+      "correct_answers": [
+        "It provides best practice recommendations in five categories"
+      ]
+    },
+    {
+      "question_number": 147,
+      "question_text": "Which AWS service provides a fully managed, serverless event bus that makes it easy to connect applications using events?",
+      "possible_answers": [
+        "Amazon EventBridge",
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon MQ"
+      ],
+      "correct_answers": [
+        "Amazon EventBridge"
+      ]
+    },
+    {
+      "question_number": 148,
+      "question_text": "A company wants to store and retrieve any amount of data from anywhere, and the data is primarily accessed frequently. Which S3 storage class is most appropriate?",
+      "possible_answers": [
+        "S3 Standard",
+        "S3 Intelligent-Tiering",
+        "S3 Standard-IA",
+        "S3 Glacier"
+      ],
+      "correct_answers": [
+        "S3 Standard"
+      ]
+    },
+    {
+      "question_number": 149,
+      "question_text": "Which of the following are AWS networking services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon VPC",
+        "Amazon Route 53",
+        "Amazon S3",
+        "Amazon RDS",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "Amazon VPC",
+        "Amazon Route 53"
+      ]
+    },
+    {
+      "question_number": 150,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for building conversational interfaces (chatbots)?",
+      "possible_answers": [
+        "Amazon Lex",
+        "Amazon Polly",
+        "Amazon Rekognition",
+        "Amazon Comprehend"
+      ],
+      "correct_answers": [
+        "Amazon Lex"
+      ]
+    },
+    {
+      "question_number": 151,
+      "question_text": "A company wants to gain insights from unstructured text using natural language processing. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon Comprehend",
+        "Amazon Rekognition",
+        "Amazon Polly",
+        "Amazon Translate"
+      ],
+      "correct_answers": [
+        "Amazon Comprehend"
+      ]
+    },
+    {
+      "question_number": 152,
+      "question_text": "Which of the following is a key benefit of using AWS CloudFront?",
+      "possible_answers": [
+        "Reduced latency through edge caching",
+        "Data backup and archiving",
+        "Relational database management",
+        "Serverless compute"
+      ],
+      "correct_answers": [
+        "Reduced latency through edge caching"
+      ]
+    },
+    {
+      "question_number": 153,
+      "question_text": "Which AWS service provides a fully managed, scalable, and secure service for building, training, and deploying machine learning models?",
+      "possible_answers": [
+        "Amazon SageMaker",
+        "AWS Deep Learning AMI",
+        "Amazon Rekognition",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "Amazon SageMaker"
+      ]
+    },
+    {
+      "question_number": 154,
+      "question_text": "A company wants to automatically scale its RDS database based on workload. Which feature enables this?",
+      "possible_answers": [
+        "RDS Auto Scaling",
+        "RDS Read Replicas",
+        "RDS Multi-AZ",
+        "RDS Snapshots"
+      ],
+      "correct_answers": [
+        "RDS Auto Scaling"
+      ]
+    },
+    {
+      "question_number": 155,
+      "question_text": "Which of the following are characteristics of Amazon EBS volumes? (Select TWO.)",
+      "possible_answers": [
+        "Persistent block storage",
+        "Can be attached to multiple EC2 instances simultaneously",
+        "Automatically backed up to S3",
+        "Available in SSD and HDD types",
+        "Global storage accessible from any Region"
+      ],
+      "correct_answers": [
+        "Persistent block storage",
+        "Available in SSD and HDD types"
+      ]
+    },
+    {
+      "question_number": 156,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for text-to-speech conversion?",
+      "possible_answers": [
+        "Amazon Polly",
+        "Amazon Lex",
+        "Amazon Transcribe",
+        "Amazon Translate"
+      ],
+      "correct_answers": [
+        "Amazon Polly"
+      ]
+    },
+    {
+      "question_number": 157,
+      "question_text": "A company wants to migrate its on-premises NAS to AWS and provide file access to on-premises applications via NFS. Which service should they use?",
+      "possible_answers": [
+        "AWS Storage Gateway File Gateway",
+        "Amazon EFS",
+        "Amazon FSx",
+        "AWS DataSync"
+      ],
+      "correct_answers": [
+        "AWS Storage Gateway File Gateway"
+      ]
+    },
+    {
+      "question_number": 158,
+      "question_text": "Which of the following is true about AWS Savings Plans?",
+      "possible_answers": [
+        "They offer lower prices than On-Demand in exchange for a commitment",
+        "They are only available for EC2",
+        "They require a one-year or three-year commitment",
+        "They are automatically applied to all usage"
+      ],
+      "correct_answers": [
+        "They offer lower prices than On-Demand in exchange for a commitment"
+      ]
+    },
+    {
+      "question_number": 159,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for real-time speech-to-text conversion?",
+      "possible_answers": [
+        "Amazon Transcribe",
+        "Amazon Polly",
+        "Amazon Lex",
+        "Amazon Rekognition"
+      ],
+      "correct_answers": [
+        "Amazon Transcribe"
+      ]
+    },
+    {
+      "question_number": 160,
+      "question_text": "A company wants to detect and protect sensitive data in S3 buckets, such as personally identifiable information (PII). Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon Macie",
+        "Amazon GuardDuty",
+        "AWS Security Hub",
+        "AWS Inspector"
+      ],
+      "correct_answers": [
+        "Amazon Macie"
+      ]
+    },
+    {
+      "question_number": 161,
+      "question_text": "Which of the following are benefits of using AWS Auto Scaling? (Select TWO.)",
+      "possible_answers": [
+        "Improves fault tolerance",
+        "Reduces cost by matching capacity to demand",
+        "Eliminates the need for load balancers",
+        "Automatically encrypts data",
+        "Provides static IP addresses"
+      ],
+      "correct_answers": [
+        "Improves fault tolerance",
+        "Reduces cost by matching capacity to demand"
+      ]
+    },
+    {
+      "question_number": 162,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for image and video analysis?",
+      "possible_answers": [
+        "Amazon Rekognition",
+        "Amazon Textract",
+        "Amazon Comprehend",
+        "Amazon SageMaker"
+      ],
+      "correct_answers": [
+        "Amazon Rekognition"
+      ]
+    },
+    {
+      "question_number": 163,
+      "question_text": "A company wants to run a WordPress website on AWS with minimal management overhead. Which service is most appropriate?",
+      "possible_answers": [
+        "AWS Elastic Beanstalk",
+        "Amazon EC2",
+        "AWS Lambda",
+        "Amazon Lightsail"
+      ],
+      "correct_answers": [
+        "Amazon Lightsail"
+      ]
+    },
+    {
+      "question_number": 164,
+      "question_text": "Which of the following is true about AWS WAF?",
+      "possible_answers": [
+        "It protects web applications from common web exploits",
+        "It provides DDoS protection at the network layer",
+        "It is a firewall for EC2 instances",
+        "It manages IAM policies"
+      ],
+      "correct_answers": [
+        "It protects web applications from common web exploits"
+      ]
+    },
+    {
+      "question_number": 165,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for extracting text and data from scanned documents?",
+      "possible_answers": [
+        "Amazon Textract",
+        "Amazon Rekognition",
+        "Amazon Comprehend",
+        "Amazon Polly"
+      ],
+      "correct_answers": [
+        "Amazon Textract"
+      ]
+    },
+    {
+      "question_number": 166,
+      "question_text": "A company wants to migrate its on-premises applications to AWS with a lift-and-shift approach. Which service can help assess the migration readiness?",
+      "possible_answers": [
+        "AWS Application Discovery Service",
+        "AWS Migration Hub",
+        "AWS Database Migration Service",
+        "AWS Server Migration Service"
+      ],
+      "correct_answers": [
+        "AWS Application Discovery Service"
+      ]
+    },
+    {
+      "question_number": 167,
+      "question_text": "Which of the following are AWS storage services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon S3",
+        "Amazon EBS",
+        "Amazon RDS",
+        "AWS Lambda",
+        "Amazon CloudFront"
+      ],
+      "correct_answers": [
+        "Amazon S3",
+        "Amazon EBS"
+      ]
+    },
+    {
+      "question_number": 168,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for translating text between languages?",
+      "possible_answers": [
+        "Amazon Translate",
+        "Amazon Comprehend",
+        "Amazon Polly",
+        "Amazon Lex"
+      ],
+      "correct_answers": [
+        "Amazon Translate"
+      ]
+    },
+    {
+      "question_number": 169,
+      "question_text": "A company wants to run a relational database with high availability across multiple Availability Zones. Which RDS feature should they enable?",
+      "possible_answers": [
+        "Multi-AZ deployment",
+        "Read Replicas",
+        "Auto Scaling",
+        "Backup retention"
+      ],
+      "correct_answers": [
+        "Multi-AZ deployment"
+      ]
+    },
+    {
+      "question_number": 170,
+      "question_text": "Which of the following is true about AWS Marketplace?",
+      "possible_answers": [
+        "It allows customers to buy and sell third-party software that runs on AWS",
+        "It is a service for managing AWS costs",
+        "It provides free training for AWS certifications",
+        "It is a storage service for market data"
+      ],
+      "correct_answers": [
+        "It allows customers to buy and sell third-party software that runs on AWS"
+      ]
+    },
+    {
+      "question_number": 171,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for detecting anomalies in time-series data?",
+      "possible_answers": [
+        "Amazon Lookout for Metrics",
+        "Amazon GuardDuty",
+        "Amazon Inspector",
+        "AWS Security Hub"
+      ],
+      "correct_answers": [
+        "Amazon Lookout for Metrics"
+      ]
+    },
+    {
+      "question_number": 172,
+      "question_text": "A company wants to stream real-time data from thousands of sources to AWS for processing. Which service should they use?",
+      "possible_answers": [
+        "Amazon Kinesis Data Streams",
+        "Amazon SQS",
+        "Amazon SNS",
+        "Amazon MQ"
+      ],
+      "correct_answers": [
+        "Amazon Kinesis Data Streams"
+      ]
+    },
+    {
+      "question_number": 173,
+      "question_text": "Which of the following are pillars of the AWS Well-Architected Framework? (Select TWO.)",
+      "possible_answers": [
+        "Operational Excellence",
+        "Scalability",
+        "Reliability",
+        "Durability",
+        "Elasticity"
+      ],
+      "correct_answers": [
+        "Operational Excellence",
+        "Reliability"
+      ]
+    },
+    {
+      "question_number": 174,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for building predictive models using autoML?",
+      "possible_answers": [
+        "Amazon SageMaker Autopilot",
+        "Amazon Personalize",
+        "Amazon Forecast",
+        "Amazon Textract"
+      ],
+      "correct_answers": [
+        "Amazon SageMaker Autopilot"
+      ]
+    },
+    {
+      "question_number": 175,
+      "question_text": "A company wants to create a personalized recommendation engine for its e-commerce site. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon Personalize",
+        "Amazon Forecast",
+        "Amazon Rekognition",
+        "Amazon Comprehend"
+      ],
+      "correct_answers": [
+        "Amazon Personalize"
+      ]
+    },
+    {
+      "question_number": 176,
+      "question_text": "Which of the following is true about AWS Certificate Manager (ACM)?",
+      "possible_answers": [
+        "It provisions and manages SSL/TLS certificates for AWS services",
+        "It manages encryption keys for S3",
+        "It provides MFA for IAM users",
+        "It is a firewall service"
+      ],
+      "correct_answers": [
+        "It provisions and manages SSL/TLS certificates for AWS services"
+      ]
+    },
+    {
+      "question_number": 177,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for time-series data?",
+      "possible_answers": [
+        "Amazon Timestream",
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Redshift"
+      ],
+      "correct_answers": [
+        "Amazon Timestream"
+      ]
+    },
+    {
+      "question_number": 178,
+      "question_text": "A company wants to predict future product demand based on historical time-series data. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon Forecast",
+        "Amazon Personalize",
+        "Amazon SageMaker",
+        "Amazon Comprehend"
+      ],
+      "correct_answers": [
+        "Amazon Forecast"
+      ]
+    },
+    {
+      "question_number": 179,
+      "question_text": "Which of the following are AWS AI/ML services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon Rekognition",
+        "Amazon DynamoDB",
+        "Amazon Lex",
+        "Amazon S3",
+        "Amazon VPC"
+      ],
+      "correct_answers": [
+        "Amazon Rekognition",
+        "Amazon Lex"
+      ]
+    },
+    {
+      "question_number": 180,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for running batch computing workloads?",
+      "possible_answers": [
+        "AWS Batch",
+        "AWS Lambda",
+        "Amazon ECS",
+        "AWS Glue"
+      ],
+      "correct_answers": [
+        "AWS Batch"
+      ]
+    },
+    {
+      "question_number": 181,
+      "question_text": "A company wants to enable users to sign in using social identity providers like Facebook or Google. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon Cognito",
+        "AWS IAM",
+        "AWS SSO",
+        "AWS Directory Service"
+      ],
+      "correct_answers": [
+        "Amazon Cognito"
+      ]
+    },
+    {
+      "question_number": 182,
+      "question_text": "Which of the following is true about Amazon Route 53 routing policies?",
+      "possible_answers": [
+        "Simple routing supports multiple values with health checks",
+        "Weighted routing distributes traffic based on probability",
+        "Latency routing always routes to the closest Region",
+        "Geolocation routing routes based on IP address"
+      ],
+      "correct_answers": [
+        "Weighted routing distributes traffic based on probability"
+      ]
+    },
+    {
+      "question_number": 183,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for sending push notifications to mobile devices?",
+      "possible_answers": [
+        "Amazon SNS",
+        "Amazon SQS",
+        "Amazon Pinpoint",
+        "Amazon SES"
+      ],
+      "correct_answers": [
+        "Amazon SNS"
+      ]
+    },
+    {
+      "question_number": 184,
+      "question_text": "A company wants to deploy a new application using a blue/green deployment strategy. Which AWS service supports this?",
+      "possible_answers": [
+        "AWS CodeDeploy",
+        "AWS CloudFormation",
+        "AWS Elastic Beanstalk",
+        "All of the above"
+      ],
+      "correct_answers": [
+        "All of the above"
+      ]
+    },
+    {
+      "question_number": 185,
+      "question_text": "Which of the following are AWS management and governance services? (Select TWO.)",
+      "possible_answers": [
+        "AWS CloudFormation",
+        "Amazon S3",
+        "AWS CloudTrail",
+        "Amazon EC2",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "AWS CloudFormation",
+        "AWS CloudTrail"
+      ]
+    },
+    {
+      "question_number": 186,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for extracting structured data from images and documents?",
+      "possible_answers": [
+        "Amazon Textract",
+        "Amazon Rekognition",
+        "Amazon Comprehend",
+        "Amazon Translate"
+      ],
+      "correct_answers": [
+        "Amazon Textract"
+      ]
+    },
+    {
+      "question_number": 187,
+      "question_text": "A company wants to create a serverless API for its mobile application backend. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon API Gateway",
+        "AWS Lambda",
+        "Amazon Cognito",
+        "Amazon DynamoDB"
+      ],
+      "correct_answers": [
+        "Amazon API Gateway"
+      ]
+    },
+    {
+      "question_number": 188,
+      "question_text": "Which of the following is true about AWS Config?",
+      "possible_answers": [
+        "It evaluates resource configurations against desired policies",
+        "It monitors application performance",
+        "It provides DDoS protection",
+        "It manages user permissions"
+      ],
+      "correct_answers": [
+        "It evaluates resource configurations against desired policies"
+      ]
+    },
+    {
+      "question_number": 189,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for building, running, and scaling machine learning models?",
+      "possible_answers": [
+        "Amazon SageMaker",
+        "AWS Deep Learning AMI",
+        "Amazon Rekognition",
+        "Amazon Comprehend"
+      ],
+      "correct_answers": [
+        "Amazon SageMaker"
+      ]
+    },
+    {
+      "question_number": 190,
+      "question_text": "A company wants to automatically stop idle EC2 instances to save costs. Which service can they use to set up a schedule?",
+      "possible_answers": [
+        "AWS Instance Scheduler",
+        "AWS Lambda",
+        "Amazon CloudWatch Events",
+        "All of the above"
+      ],
+      "correct_answers": [
+        "All of the above"
+      ]
+    },
+    {
+      "question_number": 191,
+      "question_text": "Which of the following are AWS security services? (Select TWO.)",
+      "possible_answers": [
+        "AWS Shield",
+        "Amazon S3",
+        "AWS WAF",
+        "Amazon EC2",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "AWS Shield",
+        "AWS WAF"
+      ]
+    },
+    {
+      "question_number": 192,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for building and managing blockchain networks?",
+      "possible_answers": [
+        "Amazon Managed Blockchain",
+        "Amazon QLDB",
+        "AWS Blockchain Templates",
+        "Amazon DynamoDB"
+      ],
+      "correct_answers": [
+        "Amazon Managed Blockchain"
+      ]
+    },
+    {
+      "question_number": 193,
+      "question_text": "A company wants to create an immutable ledger to record financial transactions. Which AWS service should they use?",
+      "possible_answers": [
+        "Amazon QLDB",
+        "Amazon Managed Blockchain",
+        "Amazon DynamoDB",
+        "Amazon RDS"
+      ],
+      "correct_answers": [
+        "Amazon QLDB"
+      ]
+    },
+    {
+      "question_number": 194,
+      "question_text": "Which of the following is true about AWS Inspector?",
+      "possible_answers": [
+        "It automatically assesses applications for vulnerabilities",
+        "It monitors API calls",
+        "It provides DDoS protection",
+        "It manages IAM roles"
+      ],
+      "correct_answers": [
+        "It automatically assesses applications for vulnerabilities"
+      ]
+    },
+    {
+      "question_number": 195,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for running Apache Airflow workflows?",
+      "possible_answers": [
+        "Amazon MWAA",
+        "AWS Glue",
+        "AWS Step Functions",
+        "Amazon EMR"
+      ],
+      "correct_answers": [
+        "Amazon MWAA"
+      ]
+    },
+    {
+      "question_number": 196,
+      "question_text": "A company wants to migrate its on-premises VMware environment to AWS. Which service should they use?",
+      "possible_answers": [
+        "AWS Migration Service for VMware",
+        "AWS Application Migration Service",
+        "AWS Database Migration Service",
+        "AWS Snow Family"
+      ],
+      "correct_answers": [
+        "AWS Migration Service for VMware"
+      ]
+    },
+    {
+      "question_number": 197,
+      "question_text": "Which of the following are AWS analytics services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon EMR",
+        "Amazon RDS",
+        "Amazon Redshift",
+        "Amazon S3",
+        "AWS Lambda"
+      ],
+      "correct_answers": [
+        "Amazon EMR",
+        "Amazon Redshift"
+      ]
+    },
+    {
+      "question_number": 198,
+      "question_text": "Which AWS service provides a fully managed, highly available, and scalable service for building and running microservices using service mesh architecture?",
+      "possible_answers": [
+        "AWS App Mesh",
+        "Amazon ECS",
+        "Amazon EKS",
+        "AWS Fargate"
+      ],
+      "correct_answers": [
+        "AWS App Mesh"
+      ]
+    },
+    {
+      "question_number": 199,
+      "question_text": "A company wants to automatically remediate security findings such as open security groups. Which AWS service can integrate with automated remediation?",
+      "possible_answers": [
+        "AWS Security Hub",
+        "AWS Config",
+        "Amazon GuardDuty",
+        "All of the above"
+      ],
+      "correct_answers": [
+        "All of the above"
+      ]
+    },
+    {
+      "question_number": 200,
+      "question_text": "Which of the following is a key benefit of the AWS Cloud's pay-as-you-go pricing model?",
+      "possible_answers": [
+        "No upfront costs and no need to over-provision",
+        "Fixed monthly bill",
+        "Free unlimited usage for the first year",
+        "Automatic cost optimization without any effort"
+      ],
+      "correct_answers": [
+        "No upfront costs and no need to over-provision"
+      ]
+    }
+  ]
+}
