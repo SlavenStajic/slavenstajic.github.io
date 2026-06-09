@@ -1,1 +1,65 @@
-tekst
+1.(SOA) design principle    L R A A D C S S 
+2.AWS CAF      B P G P S O
+3.pillars of AWS Well-Architected Framework?  O S R P C S
+
+
+
+AWS Cost Explorer
+A tool that shows where your AWS money is going and how your discounts (if any) are being applied.
+
+Aws GuardDuty
+A tool that analyzes AWS logs and network activity to detect and alert on potential threats or compromised resources.
+
+AWS Glue Studio
+A tool that lets you visually design, transform, and prepare data workflows (ETL) without writing much code.
+
+AWS Backup
+“I want automatic backups of my databases and restore if something breaks"
+
+AWS DataSync 
+Move Data Files from A to B, from on-prem to AWS, AWS to AWS, between storage services.
+
+AWS Application Migration Service
+Migrates entire servers to AWS, replicates and launches EC2
+
+AWS Systems Manager 
+A tool that lets you manage, monitor, and control your servers (EC2 and on‑premises) at scale without needing direct SSH/RDP access.
+
+Amazon ECR
+A tool that lets you store and manage Docker container images.
+
+Amazon ECS
+A tool that lets you run and manage containers at scale.
+
+Amazon EMR
+A tool that lets you process huge amounts of data using big data frameworks (Hadoop, Spark).
+
+Amazon Lex
+A tool that lets you build chatbots and voice bots using natural language (like Alexa).
+
+ELB Health Check
+A feature that ensures traffic is only sent to healthy instances by periodically testing them
+
+Compute Savings Plans
+A pricing model that gives you discounts in exchange for committing to usage (e.g., $/hour).
+
+AWS Transfer Family
+A tool that lets you transfer files via SFTP/FTP/FTPS into AWS storage (S3 or EFS).
+
+Amazon Chime
+A tool that provides video meetings, chat, and collaboration (like Zoom/Teams)
+
+Amazon Connect
+A tool that lets you build cloud call centers (customer support systems).
+
+Amazon OpenSearch
+A tool that lets you search, analyze, and visualize large amounts of data (logs, search engines). [aws.amazon.com]
+
+Amazon Pinpoint
+A tool that lets you send targeted messages to users (email, SMS, push notifications).
+
+AWS CodeDeploy
+A tool that lets you automate deployment of applications to servers (EC2, Lambda, etc.).
+
+AWS Security Hub
+A tool that aggregates and centralizes security alerts from multiple AWS services.
