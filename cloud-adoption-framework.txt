@@ -1,0 +1,60 @@
+AWS CLOUD ADOPTION FRAMEWORK (CAF)
+Purpose:
+Helps organizations plan and manage their move to AWS. It focuses on people, processes, and business alignment, not technical architecture.
+There are 6 perspectives.
+
+1. Business
+Focus: Business value and outcomes.
+Includes:
+
+Cost management
+ROI
+Business strategy
+
+
+2. People
+Focus: Workforce and culture.
+Includes:
+
+Training
+Skills development
+Organizational change
+
+
+3. Governance
+Focus: Control and decision-making.
+Includes:
+
+Data governance
+Risk management
+Policies and compliance
+
+Important exam point:
+Data governance belongs here. Data science does not.
+
+4. Platform
+Focus: Infrastructure and technical environment.
+Includes:
+
+Compute
+Storage
+Networking
+
+
+5. Security
+Focus: Protect systems and data.
+Includes:
+
+Identity management
+Threat detection
+Data protection
+
+
+6. Operations
+Focus: Running systems day-to-day.
+Includes:
+
+Monitoring
+Incident response
+Automation
+
