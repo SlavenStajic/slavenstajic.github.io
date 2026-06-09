@@ -1,0 +1,100 @@
+AWS WELL-ARCHITECTED FRAMEWORK
+Purpose:
+Helps you design systems that are secure, reliable, efficient, and cost-effective.
+There are 6 pillars. You must know what each one means and how to recognize it in questions.
+
+1. Operational Excellence
+Focus: How you run and improve systems.
+Key ideas:
+
+Automate operations
+Make small, frequent, reversible changes
+Continuously improve
+Learn from failures
+
+Correct patterns:
+
+CI/CD pipelines
+Using CodeDeploy or automation tools
+Running game days
+Monitoring and improving systems
+
+Incorrect patterns:
+
+Manual deployments
+Large risky changes
+No monitoring
+
+
+2. Security
+Focus: Protect systems and data.
+Key ideas:
+
+Least privilege
+Defense in depth
+Traceability (logging and auditing)
+
+Examples:
+
+IAM roles and policies
+MFA
+Encryption (at rest and in transit)
+CloudTrail logging
+
+
+3. Performance Efficiency
+Focus: Use the right resources efficiently.
+Key ideas:
+
+Scale automatically
+Choose the correct resource types
+Use modern services
+
+Examples:
+
+Auto Scaling
+Serverless (Lambda)
+Choosing the correct EC2 type
+
+Typical exam signal:
+If the question talks about “adjusting resources based on demand,” this is performance efficiency.
+
+4. Reliability
+Focus: System continues to function despite failures.
+Key ideas:
+
+Design for failure
+Automatically recover
+Distribute workloads
+
+Examples:
+
+Multi-AZ deployments
+Backups
+Failover mechanisms
+
+
+5. Cost Optimization
+Focus: Avoid unnecessary costs.
+Key ideas:
+
+Pay only for what you use
+Monitor and optimize usage
+Eliminate waste
+
+Examples:
+
+Rightsizing instances
+Reserved Instances
+Turning off unused resources
+
+
+6. Sustainability
+Focus: Reduce environmental impact.
+Key ideas:
+
+Efficient resource usage
+Reduce energy consumption
+
+This is less emphasized but still appears occasionally.
+
