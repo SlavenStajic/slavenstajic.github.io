@@ -1,0 +1,38 @@
+AWS DESIGN PRINCIPLES
+These are general best practices that appear across many questions.
+
+Core Principles
+
+
+Stop guessing capacity
+Use scaling instead of overprovisioning.
+
+
+Test at production scale
+Prepare systems for real-world usage.
+
+
+Automate everything
+Use Infrastructure as Code and automation tools.
+
+
+
+
+Make frequent, small, incremental changes
+Avoid large risky deployments.
+
+
+Monitor everything
+Use metrics, logs, and alerts.
+
+
+Design for failure
+Assume things will break and prepare for it.
+
+
+Optimize cost continuously
+Track usage and reduce waste.
+
+
+Use serverless where possible
+Reduces operational overhead and cost.
