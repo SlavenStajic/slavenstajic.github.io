@@ -2629,9 +2629,874 @@
       "correct_answers": [
         "Throughput Optimized HDD"
       ]
+    },
+
+    {
+      "question_number": 196,
+      "question_text": "A company has a customized EC2 instance running in their latest web application. How can they create an exact copy of this instance in another region?",
+      "possible_answers": [
+        "Create a load balancer with an auto scaling group that is linked between two regions. Scale up to have another instance running in the other region.",
+        "There is no way to do this in AWS. You will have to perform the transfer manually.",
+        "Create backups of all EBS volumes and copy them to another region.",
+        "Create a golden AMI of the instance and copy it to the other region."
+      ],
+      "correct_answers": [
+        "Create a golden AMI of the instance and copy it to the other region."
+      ]
+    },
+    {
+      "question_number": 197,
+      "question_text": "A company needs to run its workloads in a hybrid cloud. Due to regulatory compliance, some parts of the overall infrastructure need to be on-premises. The company wants to leverage the same API calls for both its AWS cloud and on-premises workloads. The on-premises network is defined using CIDR notation (10.0.0.0/16), and connectivity to AWS must be securely established without changing the existing IP addressing scheme. Which solution is used to meet these requirements?",
+      "possible_answers": [
+        "AWS Outposts",
+        "Amazon EC2 Dedicated Hosts",
+        "AWS Local Zones",
+        "AWS Wavelength Zones"
+      ],
+      "correct_answers": [
+        "AWS Outposts"
+      ]
+    },
+    {
+      "question_number": 198,
+      "question_text": "Which of the following services combine 5G networks with AWS compute and storage services for the benefit of high-performance mobile applications?",
+      "possible_answers": [
+        "AWS Wavelength",
+        "AWS Control Tower",
+        "AWS Cloudshell",
+        "AWS Amplify"
+      ],
+      "correct_answers": [
+        "AWS Wavelength"
+      ]
+    },
+    {
+      "question_number": 199,
+      "question_text": "Which AWS storage service offers faster disk read and write performance and provides temporary block-level storage for your instance?",
+      "possible_answers": [
+        "EBS Provisioned IOPS SSD",
+        "EFS",
+        "Instance Store",
+        "EBS Throughput Optimized HDD"
+      ],
+      "correct_answers": [
+        "Instance Store"
+      ]
+    },
+    {
+      "question_number": 200,
+      "question_text": "Which AWS service will allow you to serve your dynamic web content to users globally?",
+      "possible_answers": [
+        "Amazon S3",
+        "AWS Elastic Load Balancer",
+        "Amazon CloudFront",
+        "Amazon Route 53"
+      ],
+      "correct_answers": [
+        "Amazon CloudFront"
+      ]
+    },
+    {
+      "question_number": 201,
+      "question_text": "A number of servers in your on-premises data center have been collecting dust over the past few years. What is the benefit of moving to the Cloud in this case?",
+      "possible_answers": [
+        "AWS has automated services for you",
+        "The ability to pay for only what you use",
+        "The ability to provision resources only when you need them",
+        "Physical servers are managed and maintained by AWS for you"
+      ],
+      "correct_answers": [
+        "The ability to provision resources only when you need them"
+      ]
+    },
+    {
+      "question_number": 202,
+      "question_text": "As an AWS customer, what offering do you naturally inherit from AWS after you sign up?",
+      "possible_answers": [
+        "All the data you store in and retrieve from AWS",
+        "All the best practices of AWS policies, architecture, and operational processes built to satisfy your requirements",
+        "All the responsibilities in enforcing security and compliance policies of your organization",
+        "All the hardware and software that you provision in the AWS cloud"
+      ],
+      "correct_answers": [
+        "All the best practices of AWS policies, architecture, and operational processes built to satisfy your requirements"
+      ]
+    },
+    {
+      "question_number": 203,
+      "question_text": "A company recently migrated its e-commerce application to AWS in order to handle a surge in customer traffic. The application is hosted on Amazon EC2 instances and uses Amazon RDS to manage the product catalog and inventory. Which of the following options provides disaster recovery solutions for Amazon EC2? (Select TWO).",
+      "possible_answers": [
+        "Amazon EC2 AMI",
+        "AWS Security Hub",
+        "AWS Health Dashboard",
+        "Amazon RDS Snapshots",
+        "Amazon EBS Snapshots"
+      ],
+      "correct_answers": [
+        "Amazon EC2 AMI",
+        "Amazon EBS Snapshots"
+      ]
+    },
+    {
+      "question_number": 204,
+      "question_text": "You have an Amazon Linux EC2 instance running for an hour and thirty minutes. How will AWS bill you in terms of usage?",
+      "possible_answers": [
+        "You will be billed for an hour and thirty minutes according to the per-second billing rule",
+        "You will only be billed for an hour according to the hourly billing rule",
+        "You will be billed for one hour and thirty minutes according to the hourly billing rule",
+        "You will be billed for an hour and twenty-nine minutes according to the per second billing rule"
+      ],
+      "correct_answers": [
+        "You will be billed for an hour and thirty minutes according to the per-second billing rule"
+      ]
+    },
+    {
+      "question_number": 205,
+      "question_text": "Which of the following AWS services are considered to be global services? (Select TWO.)",
+      "possible_answers": [
+        "Amazon Route 53",
+        "AWS Lambda",
+        "AWS WAF",
+        "AWS CDK",
+        "Amazon VPC"
+      ],
+      "correct_answers": [
+        "Amazon Route 53",
+        "AWS WAF"
+      ]
+    },
+    {
+      "question_number": 206,
+      "question_text": "Which of the following does AWS automatically handle for you? (Select TWO.)",
+      "possible_answers": [
+        "Makes sure your data is safely kept and replicated between AZs",
+        "Secure AWS data centers from environmental hazards",
+        "Provide web application firewall protection to your public endpoints.",
+        "Introduce updates and patches to EC2 hypervisors",
+        "Introduce updates and patches to EC2 guest operating systems"
+      ],
+      "correct_answers": [
+        "Secure AWS data centers from environmental hazards",
+        "Introduce updates and patches to EC2 hypervisors"
+      ]
+    },
+    {
+      "question_number": 207,
+      "question_text": "How is expense shifted when moving from traditional servers to the Cloud?",
+      "possible_answers": [
+        "Capital expense is traded for variable expense",
+        "Capital expense is traded for operational expense",
+        "Operational expense is traded for variable expense",
+        "Variable expense is traded for capital expense"
+      ],
+      "correct_answers": [
+        "Capital expense is traded for variable expense"
+      ]
+    },
+    {
+      "question_number": 208,
+      "question_text": "In the event of a disaster or an outage, AWS recommends that you spread your servers and databases at least in different _____?",
+      "possible_answers": [
+        "Regions",
+        "Availability Zones",
+        "AWS Accounts",
+        "VPCs"
+      ],
+      "correct_answers": [
+        "Availability Zones"
+      ]
+    },
+    {
+      "question_number": 209,
+      "question_text": "Where can the customer view his Reserved Instance usage for the past month?",
+      "possible_answers": [
+        "Amazon EC2",
+        "On-Demand Capacity Reservations",
+        "AWS Billing Console",
+        "AWS Organizations"
+      ],
+      "correct_answers": [
+        "AWS Billing Console"
+      ]
+    },
+    {
+      "question_number": 210,
+      "question_text": "Which payment plan will give you the largest discount when purchasing EC2 reserved instances?",
+      "possible_answers": [
+        "Partial upfront payment for a 3-year term purchase",
+        "All upfront payment for a 3-year term purchase",
+        "Partial upfront payment for a 1-year term purchase",
+        "All upfront payment for a 1-year term purchase"
+      ],
+      "correct_answers": [
+        "All upfront payment for a 3-year term purchase"
+      ]
+    },
+    {
+      "question_number": 211,
+      "question_text": "Which of the following is not a standard design principle when designing systems in AWS?",
+      "possible_answers": [
+        "Disposable resources instead of fixed servers",
+        "Loose coupling",
+        "Design for failure",
+        "Servers, not services"
+      ],
+      "correct_answers": [
+        "Servers, not services"
+      ]
+    },
+    {
+      "question_number": 212,
+      "question_text": "A mobile game startup plans to upgrade its local servers to serve consumers better. However, locally stored data cannot be migrated due to compliance requirements. Which of the following options would you recommend to satisfy this requirement?",
+      "possible_answers": [
+        "Do not perform any migration for now to save up some capital for a large scale migration in the future.",
+        "Slowly migrate your web servers and data into AWS while keeping your budget in check.",
+        "Dispose all of your servers and migrate your data to AWS since it will be cheaper and more durable to store data in the cloud.",
+        "Utilize AWS web servers but keep your data locally. Setup a hybrid model in which the web servers in AWS will communicate with your local data store."
+      ],
+      "correct_answers": [
+        "Utilize AWS web servers but keep your data locally. Setup a hybrid model in which the web servers in AWS will communicate with your local data store."
+      ]
+    },
+    {
+      "question_number": 213,
+      "question_text": "What is the right arrangement of the AWS Global Infrastructure components according to their geographical coverage area size, in descending order?",
+      "possible_answers": [
+        "Regions, Edge Locations, Availability Zones",
+        "Regions, Availability Zones, Edge Locations",
+        "Availability Zones, Edge Locations, Regions",
+        "Edge Locations, Availability Zones, Regions"
+      ],
+      "correct_answers": [
+        "Regions, Availability Zones, Edge Locations"
+      ]
+    },
+    {
+      "question_number": 214,
+      "question_text": "Which AWS tool should a developer use to obtain authenticated, programmatic access to AWS directly within the application codebase for secure automation?",
+      "possible_answers": [
+        "AWS CloudFormation",
+        "AWS Software Development Kits (SDKs)",
+        "Amazon API Gateway",
+        "AWS CodePipeline"
+      ],
+      "correct_answers": [
+        "AWS Software Development Kits (SDKs)"
+      ]
+    },
+    {
+      "question_number": 215,
+      "question_text": "What type of EBS volume is recommended for most workloads and is also usable as a boot volume?",
+      "possible_answers": [
+        "Provisioned IOPS SSD",
+        "Cold HDD",
+        "General Purpose SSD",
+        "Throughput Optimized HDD"
+      ],
+      "correct_answers": [
+        "General Purpose SSD"
+      ]
+    },
+    {
+      "question_number": 216,
+      "question_text": "Which AWS service allows patching Windows Amazon EC2 instances without having to establish an RDP connection to it?",
+      "possible_answers": [
+        "AWS Systems Manager",
+        "AWS CloudFormation",
+        "AWS Step Functions",
+        "AWS Launch Wizard"
+      ],
+      "correct_answers": [
+        "AWS Systems Manager"
+      ]
+    },
+    {
+      "question_number": 217,
+      "question_text": "Which of the following is part of the best practices in securing your AWS account?",
+      "possible_answers": [
+        "Always manually define permissions to each and every individual IAM user",
+        "Grant Most Privilege",
+        "Enable MFA only on the root account",
+        "Create an IAM user with admin privileges instead of using root"
+      ],
+      "correct_answers": [
+        "Create an IAM user with admin privileges instead of using root"
+      ]
+    },
+    {
+      "question_number": 218,
+      "question_text": "Which among the following is the most cost-effective and scalable choice for object storage?",
+      "possible_answers": [
+        "Amazon S3",
+        "Amazon EBS",
+        "AWS Storage Gateway",
+        "Amazon EFS"
+      ],
+      "correct_answers": [
+        "Amazon S3"
+      ]
+    },
+    {
+      "question_number": 219,
+      "question_text": "A customer is choosing the best AWS support plan, which includes a designated Technical Account Manager. Which of the following meets the requirement MOST cost-effectively?",
+      "possible_answers": [
+        "Unified Operations",
+        "Basic",
+        "Business Support+",
+        "Enterprise"
+      ],
+      "correct_answers": [
+        "Enterprise"
+      ]
+    },
+    {
+      "question_number": 220,
+      "question_text": "A startup plans to host a simple WordPress site on AWS. However, due to its developers' limited knowledge on AWS, they seek the easiest method of deploying the site. Which AWS service should the startup use?",
+      "possible_answers": [
+        "AWS Glue",
+        "Amazon Lightsail",
+        "Amazon Elastic Beanstalk",
+        "Amazon Elastic Compute Cloud (EC2)"
+      ],
+      "correct_answers": [
+        "Amazon Lightsail"
+      ]
+    },
+    {
+      "question_number": 221,
+      "question_text": "Which of the following services should you provision if your local data center requires additional storage space without having to migrate data?",
+      "possible_answers": [
+        "AWS Storage Gateway",
+        "AWS Snowball Edge",
+        "AWS Backup",
+        "AWS Direct Connect"
+      ],
+      "correct_answers": [
+        "AWS Storage Gateway"
+      ]
+    },
+    {
+      "question_number": 222,
+      "question_text": "What is a good disaster recovery precaution if you are launching a dynamic web application with mission-critical workloads that need to be available all the time?",
+      "possible_answers": [
+        "Launch applications in two different AZs to prevent downtime during regional outages.",
+        "Run applications in the cloud but keep all data locally.",
+        "Launch applications in two different AWS Regions to prevent downtime during regional outages.",
+        "Always keep backup data stored in two different S3 buckets."
+      ],
+      "correct_answers": [
+        "Launch applications in two different AWS Regions to prevent downtime during regional outages."
+      ]
+    },
+    {
+      "question_number": 223,
+      "question_text": "What cloud computing model deals with services such as EC2 instances?",
+      "possible_answers": [
+        "SaaS",
+        "IaaS",
+        "DBaaS",
+        "PaaS"
+      ],
+      "correct_answers": [
+        "IaaS"
+      ]
+    },
+    {
+      "question_number": 224,
+      "question_text": "Which of the following actions does not affect costs when using Amazon S3?",
+      "possible_answers": [
+        "Choosing S3 Standard IA rather than One Zone IA",
+        "Data transfer costs for uploading objects into your S3 bucket.",
+        "Making GET requests to your S3 objects",
+        "Moving objects out of your S3 bucket to an S3 Express One Zone bucket."
+      ],
+      "correct_answers": [
+        "Data transfer costs for uploading objects into your S3 bucket."
+      ]
+    },
+    {
+      "question_number": 225,
+      "question_text": "Which of the following is a benefit of using AWS Config?",
+      "possible_answers": [
+        "Facilitates the real-time monitoring of AWS resources for security threats.",
+        "Facilitates adherence to regulatory requirements and best practices.",
+        "Facilitates the management of user access to AWS resources.",
+        "Facilitates the automation of AWS resource deployment."
+      ],
+      "correct_answers": [
+        "Facilitates adherence to regulatory requirements and best practices."
+      ]
+    },
+    {
+      "question_number": 226,
+      "question_text": "Which of the following is an example of having a highly available application in AWS?",
+      "possible_answers": [
+        "Running CloudFront for the static website in your S3 bucket",
+        "Running your RDS instance with multi-AZ enabled",
+        "Running spot instances for your EC2 workloads",
+        "Using Amazon SQS to decouple messages between a sender and a receiver"
+      ],
+      "correct_answers": [
+        "Running your RDS instance with multi-AZ enabled"
+      ]
+    },
+    {
+      "question_number": 227,
+      "question_text": "What is an advantage of cloud computing when it comes to equipment expenditures?",
+      "possible_answers": [
+        "AWS uses the cheapest possible equipment for their data centers so that they do not charge expensive fees.",
+        "AWS makes sure that physical devices are continuously secured and monitored.",
+        "AWS introduces cost reductions each year in their services.",
+        "You can easily scale and manage the number of resources running in your cloud environment."
+      ],
+      "correct_answers": [
+        "AWS introduces cost reductions each year in their services."
+      ]
+    },
+    {
+      "question_number": 228,
+      "question_text": "A customer is using Amazon S3 to store sprites of game characters. When players retrieve these sprites, they are temporarily stored on the player’s computer. The sprites are currently stored in the S3 Standard storage class. Which of the following options would you recommend to optimize storage costs?",
+      "possible_answers": [
+        "Add a lifecycle policy to move sprites to S3 Glacier Flexible Retrieval after the customer uploads them.",
+        "Add a lifecycle policy to move sprites to S3 Standard - Infrequent Access after the customer uploads them.",
+        "Have the customer directly upload the sprites to S3 Standard - Infrequent Access.",
+        "Have the customer compress the sprites to reduce storage consumption."
+      ],
+      "correct_answers": [
+        "Have the customer directly upload the sprites to S3 Standard - Infrequent Access."
+      ]
+    },
+    {
+      "question_number": 229,
+      "question_text": "When is using Amazon RDS a better choice than using a local database?",
+      "possible_answers": [
+        "When you need a fast network connection to your local web servers",
+        "When you want to offload administration responsibilities from yourself",
+        "When you need a free Enterprise license for your Enterprise databases",
+        "When you need full control of your SQL database"
+      ],
+      "correct_answers": [
+        "When you want to offload administration responsibilities from yourself"
+      ]
+    },
+    {
+      "question_number": 230,
+      "question_text": "A company used to experience delays in developing new services due to the time it took to procure and set up on-premises servers. They recently migrated their infrastructure to the AWS Cloud. This change has allowed them to spin up testing environments in just days, accelerating the time to market for their services. Which of the following AWS Cloud benefits is showcased in this particular scenario?",
+      "possible_answers": [
+        "Cost savings",
+        "Deploy globally in minutes",
+        "Elasticity",
+        "Agility"
+      ],
+      "correct_answers": [
+        "Agility"
+      ]
+    },
+    {
+      "question_number": 231,
+      "question_text": "What is the lowest support plan that allows an unlimited number of technical support cases to be opened?",
+      "possible_answers": [
+        "Unified Operations",
+        "Enterprise",
+        "Basic",
+        "Business Support+"
+      ],
+      "correct_answers": [
+        "Business Support+"
+      ]
+    },
+    {
+      "question_number": 232,
+      "question_text": "A startup is in need of a database that is capable of self-healing and has a high throughput. Which of the following services fits these criteria?",
+      "possible_answers": [
+        "Amazon MemoryDB for Redis",
+        "Amazon DynamoDB",
+        "Amazon RDS",
+        "Amazon Aurora"
+      ],
+      "correct_answers": [
+        "Amazon Aurora"
+      ]
+    },
+    {
+      "question_number": 233,
+      "question_text": "Which of the following does the Enterprise Support plan provide to customers in AWS? (Select TWO.)",
+      "possible_answers": [
+        "15-minute response time support if your production system goes down",
+        "Consultative reviews and guidance based on your applications.",
+        "5-minute response time support if your business-critical system goes down",
+        "Designated Technical Account Manager (TAM)",
+        "Limited access to the 7 Core Trusted Advisor checks"
+      ],
+      "correct_answers": [
+        "Consultative reviews and guidance based on your applications.",
+        "Designated Technical Account Manager (TAM)"
+      ]
+    },
+    {
+      "question_number": 234,
+      "question_text": "Which of the following purchase options offers the most significant discount compared to On-Demand instance pricing to process steady-state workloads that will continuously be running for a year and also provide capacity reservation?",
+      "possible_answers": [
+        "Dedicated Instance",
+        "Savings Plans",
+        "Standard Reserved Instance",
+        "Convertible Reserved Instance"
+      ],
+      "correct_answers": [
+        "Standard Reserved Instance"
+      ]
+    },
+    {
+      "question_number": 235,
+      "question_text": "Which service offers volume discounts when you enable Consolidated Billing?",
+      "possible_answers": [
+        "Amazon Simple Email Service (Amazon SES)",
+        "Amazon Simple Notification Service (Amazon SNS)",
+        "Amazon S3",
+        "AWS CloudTrail"
+      ],
+      "correct_answers": [
+        "Amazon S3"
+      ]
+    },
+    {
+      "question_number": 236,
+      "question_text": "What AWS service can monitor the compliance status of AWS resources against a set of compliance guidelines, integrating with AWS Systems Manager Patch Manager to track patch compliance history?",
+      "possible_answers": [
+        "Amazon CloudWatch",
+        "AWS IAM",
+        "AWS Artifact",
+        "AWS Config"
+      ],
+      "correct_answers": [
+        "AWS Config"
+      ]
+    },
+    {
+      "question_number": 237,
+      "question_text": "A company has a large amount of data stored in multiple sources, such as Amazon S3, Amazon Redshift, and Amazon RDS, and the company needs to extract, transform, and load this data into a data warehouse, integrating with Amazon SageMaker AI for data preparation and machine learning workflows. Which AWS service can help automate this process?",
+      "possible_answers": [
+        "Amazon EC2",
+        "AWS Glue",
+        "AWS Lambda",
+        "Amazon Athena"
+      ],
+      "correct_answers": [
+        "AWS Glue"
+      ]
+    },
+    {
+      "question_number": 238,
+      "question_text": "Which of the following instances is it better to use IAM roles rather than IAM users? (Select TWO.)",
+      "possible_answers": [
+        "When you want to provide AWS services permissions to do certain actions",
+        "When you need a GUI to interact with your AWS environment",
+        "When you need an administrator to handle the AWS account for you",
+        "If you have employees who will constantly need access to your AWS resources",
+        "When you have outside entities that need to perform specific actions in your AWS account"
+      ],
+      "correct_answers": [
+        "When you want to provide AWS services permissions to do certain actions",
+        "When you have outside entities that need to perform specific actions in your AWS account"
+      ]
+    },
+    {
+      "question_number": 239,
+      "question_text": "A leading mobile game company has a mission-critical server that is currently down in AWS. The Systems Administrator needs to bring it back up within 15 minutes for service continuity. Which of the following support plans will allow the Administrator to contact technical support to immediately resolve the issue?",
+      "possible_answers": [
+        "Business Support+",
+        "Basic",
+        "Enterprise Support",
+        "Unified Operations"
+      ],
+      "correct_answers": [
+        "Enterprise Support"
+      ]
+    },
+    {
+      "question_number": 240,
+      "question_text": "A company has game servers hosted in the US East (N. Virginia) Region. However, players from Europe and Asia experience high latency, impacting their gaming experience. How can the company reduce latency and improve the gaming experience for players in these regions?",
+      "possible_answers": [
+        "Deploy additional game servers in Europe and Asia",
+        "Implement Amazon CloudFront as a content delivery solution.",
+        "Utilize AWS Direct Connect to establish dedicated network connectivity.",
+        "Use autoscaling for the game servers in the US East (N. Virginia) Region."
+      ],
+      "correct_answers": [
+        "Deploy additional game servers in Europe and Asia"
+      ]
+    },
+    {
+      "question_number": 241,
+      "question_text": "Which of the following is an example of IaaS in AWS?",
+      "possible_answers": [
+        "AWS Elastic Beanstalk",
+        "AWS CloudFormation",
+        "Amazon EC2",
+        "AWS IAM"
+      ],
+      "correct_answers": [
+        "Amazon EC2"
+      ]
+    },
+    {
+      "question_number": 242,
+      "question_text": "Which of the following perspective includes the foundational capabilities of the AWS Cloud Adoption Framework (AWS CAF)?",
+      "possible_answers": [
+        "Security",
+        "Sustainability",
+        "Scalability",
+        "Reliability"
+      ],
+      "correct_answers": [
+        "Security"
+      ]
+    },
+    {
+      "question_number": 243,
+      "question_text": "A customer has recently experienced an SQL injection attack on their web application’s database hosted in EC2. They submitted a complaint ticket to AWS. What should be the response from AWS?",
+      "possible_answers": [
+        "AWS should secure their infrastructure better to reduce these kinds of incidents.",
+        "AWS should not be liable for the damages since the customer should have properly patched the EC2 instance.",
+        "AWS should reiterate that the customer is responsible for the security of their applications in the Cloud.",
+        "AWS and the customer should contact a third party auditor to verify the incident."
+      ],
+      "correct_answers": [
+        "AWS should reiterate that the customer is responsible for the security of their applications in the Cloud."
+      ]
+    },
+    {
+      "question_number": 244,
+      "question_text": "What infrastructure does Amazon CloudFront utilize to speed up content delivery to customers, also leveraged by Amazon S3 Transfer Acceleration for fast long‑distance uploads?",
+      "possible_answers": [
+        "AWS Local Zones",
+        "AWS Direct Connect",
+        "Availability Zones",
+        "Edge Locations"
+      ],
+      "correct_answers": [
+        "Edge Locations"
+      ]
+    },
+    {
+      "question_number": 245,
+      "question_text": "Which of the following RDS engines allows you to bring your own license (BYOL)?",
+      "possible_answers": [
+        "MS SQL",
+        "Oracle",
+        "MySQL",
+        "PostgreSQL"
+      ],
+      "correct_answers": [
+        "Oracle"
+      ]
+    },
+    {
+      "question_number": 246,
+      "question_text": "Availability Zones are physically separated by a meaningful distance from any other AZ, although all are within 100 km or 60 miles of each other. What is the primary reason why Availability Zones are set up the way they are now?",
+      "possible_answers": [
+        "To keep them as far apart from each other in case of a disaster",
+        "To maximize area coverage in a Region",
+        "Price of the land is cheaper in those locations",
+        "To achieve better network connectivity to users in the location"
+      ],
+      "correct_answers": [
+        "To keep them as far apart from each other in case of a disaster"
+      ]
+    },
+    {
+      "question_number": 247,
+      "question_text": "An employee is asking for access to your S3 buckets. What should be the level of access that you should provide to him?",
+      "possible_answers": [
+        "Ask what type of access he requires and only provide him those permissions",
+        "Give him S3 full access",
+        "Give him read-only access",
+        "Give him administrator access levels"
+      ],
+      "correct_answers": [
+        "Ask what type of access he requires and only provide him those permissions"
+      ]
+    },
+    {
+      "question_number": 248,
+      "question_text": "What does AWS do when a storage device reaches the end of its lifespan?",
+      "possible_answers": [
+        "AWS follows a strict decommissioning process as described in compliance procedures",
+        "AWS wipes the drives and sends it back to the manufacturer to procure a new one",
+        "AWS archives the device in case customers request their data again",
+        "AWS simply wipes the device and disposes it"
+      ],
+      "correct_answers": [
+        "AWS follows a strict decommissioning process as described in compliance procedures"
+      ]
+    },
+    {
+      "question_number": 249,
+      "question_text": "Which compliance requirement has AWS achieved that allows handling of medical information, enabling services such as Amazon Transcribe to process medical transcriptions under this framework?",
+      "possible_answers": [
+        "PCI DSS",
+        "SOC 1",
+        "SOC 2",
+        "HIPAA"
+      ],
+      "correct_answers": [
+        "HIPAA"
+      ]
+    },
+    {
+      "question_number": 250,
+      "question_text": "What action can be taken to strengthen the security of an AWS root account in the event of suspected unauthorized usage?",
+      "possible_answers": [
+        "Enable Cloudtrail to monitor for suspicious logins",
+        "Configure MFA for your root account",
+        "Change the root account password often",
+        "Disable root account credentials and use an IAM user with admin privileges instead"
+      ],
+      "correct_answers": [
+        "Configure MFA for your root account"
+      ]
+    },
+    {
+      "question_number": 251,
+      "question_text": "Which AWS well-architected pillar stresses the importance of selecting the most appropriate and right number of resource types for your requirements?",
+      "possible_answers": [
+        "Operational Excellence",
+        "Performance Efficiency",
+        "Cost optimization",
+        "Reliability"
+      ],
+      "correct_answers": [
+        "Cost optimization"
+      ]
+    },
+    {
+      "question_number": 252,
+      "question_text": "Which cloud computing advantage describes how you can easily deploy your application in multiple AWS regions with just a few clicks?",
+      "possible_answers": [
+        "Benefit from massive economies of scale",
+        "Stop spending money running and maintaining data centers",
+        "Go global in minutes",
+        "Stop guessing capacity"
+      ],
+      "correct_answers": [
+        "Go global in minutes"
+      ]
+    },
+    {
+      "question_number": 253,
+      "question_text": "An e-commerce company is considering migrating its website to the AWS Cloud to improve its scalability and reduce costs. Which statements explain the business value of migration to the AWS Cloud? (Select TWO.)",
+      "possible_answers": [
+        "Migrating to AWS Cloud offers the e-commerce company access to advanced analytics and machine learning capabilities.",
+        "The migration of enterprise applications to the AWS Cloud makes these applications automatically available on mobile devices.",
+        "Applications are modernized because migration to the AWS Cloud requires companies to rearchitect and rewrite all enterprise applications.",
+        "Companies that migrate to the AWS Cloud reduce IT costs related to infrastructure, freeing the budget for reinvestment in other areas.",
+        "Companies migrating to AWS Cloud can benefit from improving service level agreements (SLAs) while reducing risk and unplanned outages."
+      ],
+      "correct_answers": [
+        "Companies that migrate to the AWS Cloud reduce IT costs related to infrastructure, freeing the budget for reinvestment in other areas.",
+        "Companies migrating to AWS Cloud can benefit from improving service level agreements (SLAs) while reducing risk and unplanned outages."
+      ]
+    },
+    {
+      "question_number": 254,
+      "question_text": "A Software Engineer is having trouble migrating and configuring a licensed application on an Amazon EC2 instance. Which option provides the fastest way to get the application running in AWS?",
+      "possible_answers": [
+        "Try to look for an AMI in the AWS Marketplace that provides a similar setup to her application stack.",
+        "Create a Docker image of the application and launch Docker in the EC2 instances.",
+        "Use Cloud Migration Factory on AWS to automate the migration process and replicate the application environment into EC2.",
+        "Use AWS Application Discovery Service to create an exact copy of the application in EC2."
+      ],
+      "correct_answers": [
+        "Try to look for an AMI in the AWS Marketplace that provides a similar setup to her application stack."
+      ]
+    },
+    {
+      "question_number": 255,
+      "question_text": "A customer has a popular website that has millions of viewers from all over the world and has read-heavy database workloads. Which of the following is the best option to use to increase the read throughput on their database?",
+      "possible_answers": [
+        "Enable Multi-AZ deployments",
+        "Enable Amazon RDS Read Replicas",
+        "Use Amazon SQS to queue up the requests",
+        "Enable Amazon RDS Standby Replicas"
+      ],
+      "correct_answers": [
+        "Enable Amazon RDS Read Replicas"
+      ]
+    },
+    {
+      "question_number": 256,
+      "question_text": "An organization plans to build an online application form with a detection capability to recognize attributes appearing in the images. This feature will remove forms that contain inappropriate photos uploaded by users. However, the development team has no experience building machine-learning models. Which of the following services would you recommend?",
+      "possible_answers": [
+        "Amazon SageMaker",
+        "Amazon Detective",
+        "Amazon Kendra",
+        "Amazon Rekognition"
+      ],
+      "correct_answers": [
+        "Amazon Rekognition"
+      ]
+    },
+    {
+      "question_number": 257,
+      "question_text": "What are the benefits of using Amazon DynamoDB as your database? (Select TWO.)",
+      "possible_answers": [
+        "DynamoDB is self-healing, which means your data is scanned for errors and is repaired continuously",
+        "Database size scales automatically so you won’t have to worry about capacity",
+        "DynamoDB offers 11 9’s in terms of durability, according to the SLA",
+        "You can store different kinds of unstructured data that would normally not be suitable for relational databases",
+        "You can perform very complex queries and joins without deterioration in performance"
+      ],
+      "correct_answers": [
+        "Database size scales automatically so you won’t have to worry about capacity",
+        "You can store different kinds of unstructured data that would normally not be suitable for relational databases"
+      ]
+    },
+    {
+      "question_number": 258,
+      "question_text": "A company is planning to use AWS Cloud to augment the resources of their on-premises data center to better serve their customers around the world. How does a company benefit from using AWS?",
+      "possible_answers": [
+        "Replace low variable costs with upfront capital infrastructure expenses",
+        "Benefit from massive economies of scale",
+        "Replace high variable costs with upfront capital infrastructure expenses",
+        "Benefit from massive discounts from the Amazon.com shopping website"
+      ],
+      "correct_answers": [
+        "Benefit from massive economies of scale"
+      ]
+    },
+    {
+      "question_number": 259,
+      "question_text": "Which of the following is true regarding the AWS Cost and Usage report? (Select TWO.)",
+      "possible_answers": [
+        "Lets you set custom cost and usage budgets that alert you when those thresholds are exceeded",
+        "Provides you a dashboard that lets you view the status of your month-to-date AWS expenditure and provides access to a number of other cost management products that can help you dig deeper into your AWS costs and usage",
+        "Allows you to load your cost and usage information into Amazon Athena, Amazon Redshift, and AWS QuickSight",
+        "Provides you with granular data about your AWS costs and usage",
+        "Helps you visualize, understand, and manage your AWS costs and usage over time via an intuitive interface that enables you to quickly create custom reports"
+      ],
+      "correct_answers": [
+        "Allows you to load your cost and usage information into Amazon Athena, Amazon Redshift, and AWS QuickSight",
+        "Provides you with granular data about your AWS costs and usage"
+      ]
+    },
+    {
+      "question_number": 260,
+      "question_text": "A developer needs to automate operations and interact with AWS services via code rather than the web interface. Which of the following are required to support this programmatic access? (Select TWO.)",
+      "possible_answers": [
+        "Amazon EC2 key pairs",
+        "Access keys",
+        "SSH keys",
+        "AWS SDK",
+        "AWS Management Console"
+      ],
+      "correct_answers": [
+        "Access keys",
+        "AWS SDK"
+      ]
     }
   ]
 }
+  
 
 
 
