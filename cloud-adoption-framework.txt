@@ -3,6 +3,25 @@ Purpose:
 Helps organizations plan and manage their move to AWS. It focuses on people, processes, and business alignment, not technical architecture.
 There are 6 perspectives.
 
+
+Imagine starting a company in the cloud:
+
+
+🧠 Business
+→ Why are we doing this? (goals, value, ROI)
+👥 People
+→ Who will do it? (skills, training, roles)
+📜 Governance
+→ What rules must they follow? (policies, compliance)
+🏗 Platform
+→ What do they build on? (infrastructure, cloud setup)
+🔐 Security
+→ How do we protect it? (identity, data protection)
+⚙️ Operations
+→ How do we run & maintain it? (monitoring, support)
+
+
+
 1. Business
 Focus: Business value and outcomes.
 Includes:
