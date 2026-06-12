@@ -257,8 +257,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: border-color 0.2s, background 0.2s, transform 0.15s;
-    user-select: none;
-  }
+    }
   .answer-option:hover:not(.disabled) {
     border-color: var(--accent2);
     background: rgba(59,130,246,0.07);
@@ -540,6 +539,138 @@
   @media (hover: none) {
     .answer-option:hover:not(.disabled) { transform: none; }
   }
+
+  /* PAUSE BUTTON */
+  #pause-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 4px;
+    padding: 5px 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    flex-shrink: 0;
+  }
+  #pause-btn:hover { color: var(--accent); border-color: var(--accent); background: rgba(245,158,11,0.08); }
+  #pause-btn.paused { color: var(--accent); border-color: var(--accent); background: rgba(245,158,11,0.1); }
+
+  /* PAUSED BLUR OVERLAY */
+  #quiz-blurred {
+    /* no pointer-events restriction normally */
+  }
+  body.paused #quiz-blurred {
+    filter: blur(6px);
+    pointer-events: none;
+    user-select: none;
+  }
+  #pause-overlay {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0; right: 0; bottom: 0;
+    z-index: 90;
+    background: rgba(10,14,26,0.5);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+  }
+  body.paused #pause-overlay { display: flex; }
+  #pause-overlay-text {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.4rem;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  #pause-overlay-sub {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* COUNT PICKER MODAL */
+  #count-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #count-modal-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 36px 32px;
+    text-align: center;
+    max-width: 420px;
+    width: 90%;
+  }
+  #count-modal-title {
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  #count-modal-sub {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 24px;
+    letter-spacing: 0.06em;
+  }
+  #count-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .count-opt {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Space Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 14px 8px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  }
+  .count-opt:hover { border-color: var(--accent); background: rgba(245,158,11,0.08); transform: translateY(-2px); color: var(--accent); }
+  .count-min {
+    font-size: 0.62rem;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: 0.06em;
+  }
+  .count-opt:hover .count-min { color: var(--accent); opacity: 0.7; }
+  #count-cancel {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 9px 24px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  #count-cancel:hover { color: var(--text); border-color: var(--text); }
+
 </style>
 </head>
 <body>
@@ -557,6 +688,15 @@
   <div id="timer-wrap">
     <span id="timer-label">Time</span>
     <span id="timer">10:00</span>
+    <button id="pause-btn" onclick="togglePause()" title="Pause timer" style="display:none;">
+      <svg id="pause-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="2" width="4" height="12" rx="1" fill="currentColor"/>
+        <rect x="9" y="2" width="4" height="12" rx="1" fill="currentColor"/>
+      </svg>
+      <svg id="play-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <path d="M4 2L14 8L4 14V2Z" fill="currentColor"/>
+      </svg>
+    </button>
   </div>
 </div>
 
@@ -564,18 +704,25 @@
   <div id="progress-bar"></div>
 </div>
 
+<div id="pause-overlay">
+  <div id="pause-overlay-text">⏸ Paused</div>
+  <div id="pause-overlay-sub">Click resume to continue</div>
+</div>
+
+<div id="quiz-blurred">
 <main>
   <div id="loading"><span class="dots">Loading questions</span></div>
   <div id="error-msg" style="display:none"></div>
 
   <div id="intro" style="display:none">
     <h1>AWS Cloud<br>Practitioner</h1>
-    <p>10 random questions, 10 minutes on the clock. Test your AWS knowledge and see how you score.</p>
+    <p>Test your AWS knowledge. Choose how many questions you want — each question gives you 1 minute on the clock.</p>
     <div class="btn-row">
-      <button id="start-btn" onclick="startQuiz('pitanja.json')">Start Quiz</button>
-      <button id="start-ai-btn" onclick="startQuiz('pitanja2.json')">AI Questions<span class="ai-badge">✦ AI</span></button>
+      <button id="start-btn" onclick="openCountPicker('pitanja.json')">Start Quiz</button>
+      <button id="start-ai-btn" onclick="openCountPicker('pitanja2.json')">Start Quiz (AI Questions)<span class="ai-badge">✦ AI</span></button>
     </div>
   </div>
+
 
   <div id="quiz-container">
     <div id="questions-wrap"></div>
@@ -591,10 +738,11 @@
     <button id="retry-btn" onclick="retryQuiz()">Try Again</button>
   </div>
 </main>
+</div><!-- /quiz-blurred -->
 
 <script>
-  const TOTAL_QUESTIONS = 10;
-  const TIME_LIMIT = 10 * 60; // seconds
+  let TOTAL_QUESTIONS = 10;
+  let TIME_LIMIT = 10 * 60; // seconds — updated dynamically
 
   let allQuestions = [];
   let selectedQuestions = [];
@@ -602,6 +750,8 @@
   let timerInterval = null;
   let timeLeft = TIME_LIMIT;
   let submitted = false;
+  let paused = false;
+  let pendingFile = null; // file chosen before count picker
 
   // ── Load JSON ──────────────────────────────────────────────
   async function loadQuestions() {
@@ -620,14 +770,65 @@
   }
 
   function pickQuestions() {
+    // Shuffle creates a new array; slice guarantees unique subset — no repeats
     const shuffled = shuffle(allQuestions);
-    return shuffled.slice(0, Math.min(TOTAL_QUESTIONS, shuffled.length));
+    const count = Math.min(TOTAL_QUESTIONS, shuffled.length);
+    return shuffled.slice(0, count);
+  }
+
+  // ── Count Picker ───────────────────────────────────────────
+  function openCountPicker(filename) {
+    pendingFile = filename;
+    document.getElementById('count-modal').style.display = 'flex';
+  }
+
+  function closeCountPicker() {
+    pendingFile = null;
+    document.getElementById('count-modal').style.display = 'none';
+  }
+
+  function confirmCount(count) {
+    TOTAL_QUESTIONS = count;
+    TIME_LIMIT = count * 60;
+    document.getElementById('count-modal').style.display = 'none';
+    startQuiz(pendingFile);
+  }
+
+  // ── Pause / Resume ──────────────────────────────────────────
+  function togglePause() {
+    if (submitted) return;
+    paused = !paused;
+    if (paused) {
+      clearInterval(timerInterval);
+      document.body.classList.add('paused');
+      document.getElementById('pause-icon').style.display = 'none';
+      document.getElementById('play-icon').style.display = '';
+      document.getElementById('pause-btn').classList.add('paused');
+      document.getElementById('pause-btn').title = 'Resume timer';
+    } else {
+      document.body.classList.remove('paused');
+      document.getElementById('pause-icon').style.display = '';
+      document.getElementById('play-icon').style.display = 'none';
+      document.getElementById('pause-btn').classList.remove('paused');
+      document.getElementById('pause-btn').title = 'Pause timer';
+      // Resume countdown
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        renderTimer();
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          if (!submitted) submitQuiz(true);
+        }
+      }, 1000);
+    }
   }
 
   // ── Timer ──────────────────────────────────────────────────
   function startTimer() {
     timeLeft = TIME_LIMIT;
     renderTimer();
+    paused = false;
+    clearInterval(timerInterval);
     timerInterval = setInterval(() => {
       timeLeft--;
       renderTimer();
@@ -672,6 +873,7 @@
     startTimer();
     updateProgress();
     document.getElementById('back-btn').classList.add('visible');
+    document.getElementById('pause-btn').style.display = 'flex';
   }
 
   function renderQuestions() {
@@ -857,6 +1059,8 @@
   function retryQuiz() {
     clearInterval(timerInterval);
     submitted = false;
+    paused = false;
+    document.body.classList.remove('paused');
     document.getElementById('score-section').style.display = 'none';
     document.getElementById('quiz-container').style.display = 'none';
     document.getElementById('submit-section').style.display = 'flex';
@@ -866,6 +1070,10 @@
     el.textContent = '10:00';
     document.getElementById('intro').style.display = 'block';
     document.getElementById('back-btn').classList.remove('visible');
+    document.getElementById('pause-btn').style.display = 'none';
+    document.getElementById('pause-icon').style.display = '';
+    document.getElementById('play-icon').style.display = 'none';
+    document.getElementById('pause-btn').classList.remove('paused');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -880,6 +1088,23 @@
 
   loadQuestions();
 </script>
+
+<!-- Question count picker modal — outside blur wrapper so it's always clickable -->
+<div id="count-modal" style="display:none;">
+  <div id="count-modal-box">
+    <div id="count-modal-title">How many questions?</div>
+    <div id="count-modal-sub">1 minute per question</div>
+    <div id="count-options">
+      <button class="count-opt" onclick="confirmCount(10)">10<span class="count-min">10 min</span></button>
+      <button class="count-opt" onclick="confirmCount(20)">20<span class="count-min">20 min</span></button>
+      <button class="count-opt" onclick="confirmCount(30)">30<span class="count-min">30 min</span></button>
+      <button class="count-opt" onclick="confirmCount(40)">40<span class="count-min">40 min</span></button>
+      <button class="count-opt" onclick="confirmCount(50)">50<span class="count-min">50 min</span></button>
+      <button class="count-opt" onclick="confirmCount(60)">60<span class="count-min">60 min</span></button>
+    </div>
+    <button id="count-cancel" onclick="closeCountPicker()">Cancel</button>
+  </div>
+</div>
 </body>
 </html>
 
