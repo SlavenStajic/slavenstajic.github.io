@@ -63,3 +63,35 @@ A tool that lets you automate deployment of applications to servers (EC2, Lambda
 
 AWS Security Hub
 A tool that aggregates and centralizes security alerts from multiple AWS services.
+
+Amazon Transcribe
+A speech-to-text service that converts audio (spoken language) into written text.
+👉 Example: Turning recorded meetings into transcripts.
+
+Amazon Polly
+A text-to-speech service that converts written text into natural-sounding spoken audio.
+👉 Example: Making apps read content out loud.
+
+Amazon Lex
+A service for building conversational interfaces using voice and text (chatbots).
+👉 Example: Creating customer support bots that understand user input and respond.
+
+Amazon Rekognition
+An image and video analysis service that can identify objects, people, faces, and text in images/videos.
+👉 Example: Detecting faces or recognizing objects in photos.
+
+Amazon SNS (Simple Notification Service)
+A messaging service that sends notifications to multiple users or systems via SMS, email, or other services.
+👉 Example: Sending alerts to users about system updates.
+
+Amazon SES (Simple Email Service)
+A cloud-based email service used to send and receive emails at scale.
+👉 Example: Sending confirmation or marketing emails.
+
+Amazon Pinpoint
+A service for managing and sending targeted marketing campaigns across multiple channels (email, SMS, push notifications).
+👉 Example: Running customer engagement campaigns with analytics.
+
+Amazon WorkMail
+A secure, managed business email and calendar service.
+👉 Example: Corporate email system similar to Microsoft Outlook/Exchange.
