@@ -95,3 +95,11 @@ A service for managing and sending targeted marketing campaigns across multiple 
 Amazon WorkMail
 A secure, managed business email and calendar service.
 👉 Example: Corporate email system similar to Microsoft Outlook/Exchange.
+
+Concierge Support
+👉 “Dedicated helper”
+Someone in AWS support takes care of your problems fast
+
+AWS Professional Services
+👉 “Expert builders”
+AWS experts help you build or fix your system
