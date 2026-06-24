@@ -82,3 +82,50 @@ AWS IAM Identity Center
 AWS Security Hub
 AWS AppSync
 Amazon Cognito Identity Pool ✅
+
+Question 1:
+A company has deployed AWS Transfer Family to handle file transfers and now requires a centralized, scalable, and durable file storage for its fleet of on‑premises servers that supports massive parallel access. Which of the following is the most appropriate solution to use?
+
+Amazon Storage Gateway - File Gateway
+Amazon S3
+Amazon Redshift
+Amazon Elastic File System (EFS) ✅
+
+
+Question 2:
+Which of the following AWS well-architected pillars discusses the use of the right computing resources to meet demand levels even as the demand changes and technologies evolve?
+
+Performance Efficiency ✅
+Reliability
+Operational Excellence
+Cost Optimization
+
+
+Question 3:
+Which of the following practices demonstrate operational excellence in AWS cloud? (Select TWO.)
+
+Monitor Amazon EC2 metric consumption and adjust the instance type accordingly
+Perform monthly game days on your AWS environment ✅
+Deploy small, incremental changes to your production servers using AWS CodeDeploy ✅
+Use serverless applications such as AWS Lambda
+Launching your infrastructure manually via the Console
+
+
+Question 4:
+An organization would like to boost productivity by improving business communication channels and customer service experience. Which of the following AWS applications would be suggested? (Select TWO.)
+
+Amazon Workspaces
+AWS Transfer Family
+AWS Marketplace
+Amazon Chime ✅
+Amazon Connect ✅
+
+
+Question 5:
+Which of the following services allows storing Docker images and orchestrating Docker containers in a simple and cost-effective manner? (Select TWO.)
+
+Amazon Elastic Container Registry (Amazon ECR) ✅
+AWS Lambda
+AWS Batch
+Amazon Elastic Container Service (Amazon ECS) ✅
+AWS CodeBuild
