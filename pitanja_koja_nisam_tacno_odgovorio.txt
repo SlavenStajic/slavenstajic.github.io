@@ -1,1 +1,84 @@
+Question 1:
+In AWS Trusted Advisor, which of the following options are included among the five categories being considered to analyze your AWS environment and provide the best practice recommendations? (Select TWO.)
 
+Fault Tolerance ✅
+Instance Usage
+Infrastructure
+Performance ✅
+Storage Capacity
+
+
+Question 2:
+Which of the following channels shares a collection of offerings to help you achieve specific business outcomes related to enterprise cloud adoption through paid engagements in several specialty practice areas?
+
+AWS Professional Services ✅
+AWS Enterprise Support
+AWS Technical Account Manager
+Concierge Support
+
+
+Question 3:
+Which of the following options below is solely the responsibility of the customer in accordance with the AWS shared responsibility model?
+
+Configuration Management
+Patching of the host operating system
+Service and Communications Protection (Zone Security) ✅
+Awareness & Training
+
+
+Question 4:
+Which of the following can you use to resolve the connection between your on-premises VPN and your Amazon VPC (Select TWO.)?
+
+VPC Peering
+Amazon Route 53 ✅
+Egress-Only Internet Gateway
+Virtual Private Gateway ✅
+NAT Gateway
+
+
+Question 5:
+An e-commerce company wants to migrate its on-premises infrastructure to AWS and ensure the migration is secure and efficient. Which AWS CAF perspective is most essential?
+
+Security Perspective ✅
+Governance Perspective
+Platform Perspective
+Operations Perspective
+
+
+Question 6:
+A company has a hybrid cloud architecture. Which AWS services can you use to deploy a web application to servers running on-premises? (Select TWO.)
+
+AWS Batch
+AWS Systems Manager ✅
+AWS CloudFormation
+AWS CodeDeploy ✅
+AWS Elastic Beanstalk
+
+
+Question 1:
+A company needs to automate and accelerate the transfer of large datasets from its on-premises storage to Amazon S3 on a recurring basis.
+Which AWS service should the company use?
+
+AWS Direct Connect
+AWS Transfer Family
+AWS DataSync ✅
+AWS Data Exchange
+
+
+Question 2:
+A customer currently has a Basic support plan and is planning to use the Infrastructure Event Management, Well‑Architected Reviews, and Operations Reviews features in AWS.
+What action should be taken to access these features in the most cost‑effective manner?
+
+Upgrade to the Enterprise support plan ✅
+Upgrade to Business support+ plan
+Upgrade to Unified Operations plan
+None since these features are already included in their Basic support plan
+
+
+Question 3:
+Which of the following should be used to provide temporary AWS credentials for users who have been authenticated via social media logins, as well as for guest users who do not require any authentication?
+
+AWS IAM Identity Center
+AWS Security Hub
+AWS AppSync
+Amazon Cognito Identity Pool ✅
