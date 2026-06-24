@@ -129,3 +129,21 @@ AWS Lambda
 AWS Batch
 Amazon Elastic Container Service (Amazon ECS) ✅
 AWS CodeBuild
+
+
+
+
+Which AWS service will allow you to serve your dynamic web content to users globally?
+
+Amazon CloudFront ✅
+Amazon Route 53
+AWS Elastic Load Balancer
+Amazon S3
+
+Which of the following does the Enterprise Support plan provide to customers in AWS? (Select TWO.)
+
+Consultative reviews and guidance based on your applications. ✅
+5-minute response time support if your business-critical system goes down
+Limited access to the 7 Core Trusted Advisor checks
+15-minute response time support if your production system goes down
+Designated Technical Account Manager (TAM) ✅
