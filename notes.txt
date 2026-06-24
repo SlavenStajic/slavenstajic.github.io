@@ -3,6 +3,7 @@
 3.pillars of AWS Well-Architected Framework?  O S R P C S
 
 
+aws fargate----
 
 AWS Cost Explorer
 A tool that shows where your AWS money is going and how your discounts (if any) are being applied.
