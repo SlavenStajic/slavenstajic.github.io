@@ -164,12 +164,12 @@ Which AWS service is a fully managed continuous integration service that compile
 AWS CodeBuild ✅
 AWS CodeArtifact
 AWS CodePipeline
-AWS CodeDeploy ❌
+AWS CodeDeploy 
 
 21:
 Which AWS service connects VPCs and on-premises networks through a central hub?
 AWS Direct Connect
-Amazon VPC Peering ❌
+Amazon VPC Peering 
 AWS Transit Gateway ✅
 AWS Client VPN
 
@@ -185,14 +185,14 @@ Which S3 storage classes have no retrieval charges? (Select TWO)
 S3 Glacier Deep Archive
 S3 Standard ✅
 S3 One Zone-IA
-S3 Standard-IA ❌
+S3 Standard-IA 
 S3 Intelligent Tiering ✅
 
 24:
 Which services can you use to upload SSL certificates? (Select TWO)
 AWS License Manager
 AWS IAM ✅
-AWS Systems Manager ❌
+AWS Systems Manager 
 AWS Certificate Manager ✅
 AWS KMS
 
@@ -200,13 +200,13 @@ AWS KMS
 Which service is used to run complex analytic queries on large structured datasets?
 Amazon Redshift ✅
 Amazon DynamoDB
-Amazon Neptune ❌
+Amazon Neptune 
 Amazon S3
 
 26:
 Which AWS services support building a serverless application with a key-value database? (Select TWO)
 AWS Lambda ✅
-Amazon SageMaker ❌
+Amazon SageMaker 
 Amazon RDS
 Amazon ECR
 Amazon DynamoDB ✅
@@ -215,13 +215,13 @@ Amazon DynamoDB ✅
 Which AWS service allows you to create and control encryption keys for cryptographic operations?
 AWS Systems Manager
 AWS Resource Access Manager
-AWS CloudHSM ❌
+AWS CloudHSM 
 AWS KMS ✅
 
 28:
 What types of caching solutions are available in Amazon ElastiCache? (Select TWO)
 Amazon ElastiCache for Redis ✅
-Amazon ElastiCache for Apache Ignite ❌
+Amazon ElastiCache for Apache Ignite 
 Amazon ElastiCache for Apache Kafka
 Amazon ElastiCache for Serverless
 Amazon ElastiCache for Memcached ✅
@@ -229,7 +229,7 @@ Amazon ElastiCache for Memcached ✅
 29:
 Which AWS service can be used as a centralized Windows File Server for multiple EC2 instances?
 Amazon S3
-Amazon EFS ❌
+Amazon EFS 
 Amazon FSx ✅
 Amazon EBS
 
@@ -238,7 +238,7 @@ Which services allow querying data directly in Amazon S3? (Select TWO)
 Amazon Redshift Spectrum ✅
 Amazon MQ
 Amazon Neptune
-Amazon ElastiCache ❌
+Amazon ElastiCache 
 Amazon Athena ✅
 
 31:
@@ -246,12 +246,12 @@ Which AWS service coordinates distributed applications using visual workflows?
 AWS Batch
 Amazon API Gateway
 AWS Step Functions ✅
-Amazon Rekognition ❌
+Amazon Rekognition 
 
 32:
 Which service provides a single-tenant hardware security module with full control over encryption keys?
 Amazon GuardDuty
-AWS KMS ❌
+AWS KMS 
 Amazon S3
 AWS CloudHSM ✅
 
@@ -260,6 +260,6 @@ Which services connect on-premises environments to AWS? (Select TWO)
 AWS Directory Service
 Amazon Connect
 AWS Direct Connect ✅
-AWS Transit Gateway ❌
+AWS Transit Gateway 
 AWS Site-to-Site VPN ✅
 
