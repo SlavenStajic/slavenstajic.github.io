@@ -1,4 +1,4 @@
-Question 1:
+1:
 In AWS Trusted Advisor, which of the following options are included among the five categories being considered to analyze your AWS environment and provide the best practice recommendations? (Select TWO.)
 
 Fault Tolerance ✅
@@ -7,8 +7,7 @@ Infrastructure
 Performance ✅
 Storage Capacity
 
-
-Question 2:
+2:
 Which of the following channels shares a collection of offerings to help you achieve specific business outcomes related to enterprise cloud adoption through paid engagements in several specialty practice areas?
 
 AWS Professional Services ✅
@@ -16,8 +15,7 @@ AWS Enterprise Support
 AWS Technical Account Manager
 Concierge Support
 
-
-Question 3:
+3:
 Which of the following options below is solely the responsibility of the customer in accordance with the AWS shared responsibility model?
 
 Configuration Management
@@ -25,8 +23,7 @@ Patching of the host operating system
 Service and Communications Protection (Zone Security) ✅
 Awareness & Training
 
-
-Question 4:
+4:
 Which of the following can you use to resolve the connection between your on-premises VPN and your Amazon VPC (Select TWO.)?
 
 VPC Peering
@@ -35,8 +32,7 @@ Egress-Only Internet Gateway
 Virtual Private Gateway ✅
 NAT Gateway
 
-
-Question 5:
+5:
 An e-commerce company wants to migrate its on-premises infrastructure to AWS and ensure the migration is secure and efficient. Which AWS CAF perspective is most essential?
 
 Security Perspective ✅
@@ -44,8 +40,7 @@ Governance Perspective
 Platform Perspective
 Operations Perspective
 
-
-Question 6:
+6:
 A company has a hybrid cloud architecture. Which AWS services can you use to deploy a web application to servers running on-premises? (Select TWO.)
 
 AWS Batch
@@ -54,8 +49,7 @@ AWS CloudFormation
 AWS CodeDeploy ✅
 AWS Elastic Beanstalk
 
-
-Question 1:
+7:
 A company needs to automate and accelerate the transfer of large datasets from its on-premises storage to Amazon S3 on a recurring basis.
 Which AWS service should the company use?
 
@@ -64,8 +58,7 @@ AWS Transfer Family
 AWS DataSync ✅
 AWS Data Exchange
 
-
-Question 2:
+8:
 A customer currently has a Basic support plan and is planning to use the Infrastructure Event Management, Well‑Architected Reviews, and Operations Reviews features in AWS.
 What action should be taken to access these features in the most cost‑effective manner?
 
@@ -74,8 +67,7 @@ Upgrade to Business support+ plan
 Upgrade to Unified Operations plan
 None since these features are already included in their Basic support plan
 
-
-Question 3:
+9:
 Which of the following should be used to provide temporary AWS credentials for users who have been authenticated via social media logins, as well as for guest users who do not require any authentication?
 
 AWS IAM Identity Center
@@ -83,7 +75,7 @@ AWS Security Hub
 AWS AppSync
 Amazon Cognito Identity Pool ✅
 
-Question 1:
+10:
 A company has deployed AWS Transfer Family to handle file transfers and now requires a centralized, scalable, and durable file storage for its fleet of on‑premises servers that supports massive parallel access. Which of the following is the most appropriate solution to use?
 
 Amazon Storage Gateway - File Gateway
@@ -92,7 +84,7 @@ Amazon Redshift
 Amazon Elastic File System (EFS) ✅
 
 
-Question 2:
+11:
 Which of the following AWS well-architected pillars discusses the use of the right computing resources to meet demand levels even as the demand changes and technologies evolve?
 
 Performance Efficiency ✅
@@ -101,7 +93,7 @@ Operational Excellence
 Cost Optimization
 
 
-Question 3:
+12:
 Which of the following practices demonstrate operational excellence in AWS cloud? (Select TWO.)
 
 Monitor Amazon EC2 metric consumption and adjust the instance type accordingly
@@ -110,8 +102,7 @@ Deploy small, incremental changes to your production servers using AWS CodeDeplo
 Use serverless applications such as AWS Lambda
 Launching your infrastructure manually via the Console
 
-
-Question 4:
+13:
 An organization would like to boost productivity by improving business communication channels and customer service experience. Which of the following AWS applications would be suggested? (Select TWO.)
 
 Amazon Workspaces
@@ -120,8 +111,7 @@ AWS Marketplace
 Amazon Chime ✅
 Amazon Connect ✅
 
-
-Question 5:
+14:
 Which of the following services allows storing Docker images and orchestrating Docker containers in a simple and cost-effective manner? (Select TWO.)
 
 Amazon Elastic Container Registry (Amazon ECR) ✅
@@ -130,9 +120,7 @@ AWS Batch
 Amazon Elastic Container Service (Amazon ECS) ✅
 AWS CodeBuild
 
-
-
-
+15:
 Which AWS service will allow you to serve your dynamic web content to users globally?
 
 Amazon CloudFront ✅
@@ -140,6 +128,7 @@ Amazon Route 53
 AWS Elastic Load Balancer
 Amazon S3
 
+16:
 Which of the following does the Enterprise Support plan provide to customers in AWS? (Select TWO.)
 
 Consultative reviews and guidance based on your applications. ✅
@@ -147,3 +136,130 @@ Consultative reviews and guidance based on your applications. ✅
 Limited access to the 7 Core Trusted Advisor checks
 15-minute response time support if your production system goes down
 Designated Technical Account Manager (TAM) ✅
+
+
+17:
+What is the cloud computing model for services like Amazon RDS and Amazon ECS, where AWS takes care of configuration management and the underlying infrastructure?
+SaaS
+IaaS 
+FaaS
+PaaS ✅
+
+18:
+A company wants to demonstrate incremental business value and gather insights during cloud adoption. Which AWS CAF phase includes these activities?
+Scale
+Align
+Launch ✅
+Envision 
+
+19:
+Which S3 storage class is cheapest for infrequently accessed, re-creatable data but still requires low latency and high throughput?
+S3 One Zone-IA ✅
+S3 Glacier Deep Archive
+S3 Standard 
+S3 Glacier Flexible Retrieval
+
+20:
+Which AWS service is a fully managed continuous integration service that compiles code, runs tests, and produces deployable packages?
+AWS CodeBuild ✅
+AWS CodeArtifact
+AWS CodePipeline
+AWS CodeDeploy ❌
+
+21:
+Which AWS service connects VPCs and on-premises networks through a central hub?
+AWS Direct Connect
+Amazon VPC Peering ❌
+AWS Transit Gateway ✅
+AWS Client VPN
+
+22:
+Which feature is available in AWS Business Support+ plan?
+Concierge Support Team
+Technical Account Manager
+AWS Well-Architected Reviews
+Architecture Support ✅
+
+23:
+Which S3 storage classes have no retrieval charges? (Select TWO)
+S3 Glacier Deep Archive
+S3 Standard ✅
+S3 One Zone-IA
+S3 Standard-IA ❌
+S3 Intelligent Tiering ✅
+
+24:
+Which services can you use to upload SSL certificates? (Select TWO)
+AWS License Manager
+AWS IAM ✅
+AWS Systems Manager ❌
+AWS Certificate Manager ✅
+AWS KMS
+
+25:
+Which service is used to run complex analytic queries on large structured datasets?
+Amazon Redshift ✅
+Amazon DynamoDB
+Amazon Neptune ❌
+Amazon S3
+
+26:
+Which AWS services support building a serverless application with a key-value database? (Select TWO)
+AWS Lambda ✅
+Amazon SageMaker ❌
+Amazon RDS
+Amazon ECR
+Amazon DynamoDB ✅
+
+27:
+Which AWS service allows you to create and control encryption keys for cryptographic operations?
+AWS Systems Manager
+AWS Resource Access Manager
+AWS CloudHSM ❌
+AWS KMS ✅
+
+28:
+What types of caching solutions are available in Amazon ElastiCache? (Select TWO)
+Amazon ElastiCache for Redis ✅
+Amazon ElastiCache for Apache Ignite ❌
+Amazon ElastiCache for Apache Kafka
+Amazon ElastiCache for Serverless
+Amazon ElastiCache for Memcached ✅
+
+29:
+Which AWS service can be used as a centralized Windows File Server for multiple EC2 instances?
+Amazon S3
+Amazon EFS ❌
+Amazon FSx ✅
+Amazon EBS
+
+30:
+Which services allow querying data directly in Amazon S3? (Select TWO)
+Amazon Redshift Spectrum ✅
+Amazon MQ
+Amazon Neptune
+Amazon ElastiCache ❌
+Amazon Athena ✅
+
+31:
+Which AWS service coordinates distributed applications using visual workflows?
+AWS Batch
+Amazon API Gateway
+AWS Step Functions ✅
+Amazon Rekognition ❌
+
+32:
+Which service provides a single-tenant hardware security module with full control over encryption keys?
+Amazon GuardDuty
+AWS KMS ❌
+Amazon S3
+AWS CloudHSM ✅
+
+33:
+Which services connect on-premises environments to AWS? (Select TWO)
+AWS Directory Service
+Amazon Connect
+AWS Direct Connect ✅
+AWS Transit Gateway ❌
+AWS Site-to-Site VPN ✅
+
