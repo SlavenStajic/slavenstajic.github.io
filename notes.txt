@@ -47,10 +47,6 @@ AWS Cost Explorer
 👉 “Track and analyze AWS costs”
 Shows where your AWS money is going and how discounts are applied.
 
-AWS GuardDuty
-👉 “Threat detection service”
-Analyzes logs and network activity to detect suspicious behavior or compromised resources.
-
 AWS Glue Studio
 👉 “Visual ETL builder”
 Design, transform, and prepare data workflows with minimal code.
@@ -148,12 +144,17 @@ Amazon WorkMail
 Managed email and calendar system.
 
 Concierge Support
-👉 “Billing/account help”
-AWS staff assists with billing and account-related issues.
+👉 - Billing support (invoices, payments, charges)
+- Account support (account setup, upgrades, limits)
+- General AWS guidance (which services to use, basic help)
+- NOT deep technical troubleshooting
+Available in:
+→ Business Support Plan
+→ Enterprise Support Plan
 
 AWS Professional Services
 👉 “Expert consulting”
-AWS experts help design and implement solutions.
+AWS experts help design and implement solutions on aws.
 
 AWS Transit Gateway
 👉 “Central network hub”
@@ -195,9 +196,6 @@ AWS CodeBuild
 👉 “Build and test code”
 Compiles code, runs tests, produces artifacts (CI).
 
-AWS Step Functions
-👉 “Workflow orchestrator”
-Coordinates services using visual workflows (state machines).
 
 Amazon EFS
 👉 “Shared Linux file storage”
