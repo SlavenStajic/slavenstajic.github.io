@@ -1,6 +1,43 @@
-1.(SOA) design principle    L R A A D C S S 
-2.AWS CAF      B P G P S O
-3.pillars of AWS Well-Architected Framework?  O S R P C S
+1. SOA Design Principles (L R A A D C S S)
+L – Loose Coupling
+R – Reusability
+A – Autonomy
+A – Abstraction
+D – Discoverability
+C – Composability
+S – Statelessness
+S – Scalability
+
+
+2. AWS CAF (B P G P S O)
+B – Business
+P – People
+G – Governance
+P – Platform
+S – Security
+O – Operations
+
+
+3. AWS Well-Architected Pillars (O S R P C S)
+O – Operational Excellence
+S – Security
+R – Reliability
+P – Performance Efficiency
+C – Cost Optimization
+S – Sustainability
+
+
+4. AWS Cloud Design Principles (S T A M M D C U)
+S – Stop guessing capacity
+T – Test in production
+A – Automate everything
+M – Make small, frequent changes
+M – Monitor everything
+D – Design for failure
+C – Cost optimization
+U – Use serverless when possible
+
+
 
 AWS Fargate
 👉 “Run containers without managing servers”
